@@ -1,0 +1,187 @@
+head	1.6;
+access;
+symbols;
+locks; strict;
+comment	@-- @;
+
+
+1.6
+date	2008.11.24.02.05.39;	author baker;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.11.23.01.54.28;	author baker;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.11.20.22.18.50;	author baker;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.11.20.18.49.43;	author baker;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.11.19.14.25.53;	author baker;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.19.12.04.57;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@--  $Id: aperiodic_workloads.adb,v 1.5 2008/11/23 01:54:28 baker Exp baker $
+
+with Random_Tools;  use Random_Tools;
+with Error_Log; use Error_Log;
+with Ada.Text_IO; use Ada.Text_IO;
+package body Aperiodic_Workloads is
+
+   procedure Bind_Parms (M : in out Object;
+                         P : Parameters) is
+   begin
+      M.Parms := P;
+      Pragma Assert (P.Mean_Interarrival_Time > P.Mean_Execution_Time);
+   end Bind_Parms;
+
+   function Utilization (M : Object) return Float is
+   begin
+      return M.Parms.Mean_Execution_Time / M.Parms.Mean_Interarrival_Time;
+   end Utilization;
+
+   procedure Arrive (M : in out Object;
+                     T : in Time;
+                     J : out Jobs.Job;
+                     Next_Arrival_Time : out Time) is
+      IAT : Time;
+   begin
+      J.Arrival_Time := T;
+      J.Absolute_Deadline := Time'Last;
+      loop
+         J.Execution_Time :=
+           Time (Exp_Dist (M.Parms.Mean_Execution_Time));
+           exit when J.Execution_Time > 0;
+      end loop;
+      loop
+         IAT := Time (Exp_Dist (M.Parms.Mean_Interarrival_Time));
+         pragma Debug (Debug (11, "next inter-arrival_time = " & Time 'Image(IAT)));
+         exit when IAT > 0;
+      end loop;
+      Next_Arrival_Time := T + IAT;
+   end Arrive;
+
+   function Start_Time (M : Object) return Time is
+   begin
+      return 0;
+   end Start_Time;
+
+   function Name (Model : Object) return String is
+   begin
+      return "aperiodic";
+   end Name;
+
+end Aperiodic_Workloads;
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: aperiodic_workloads.adb,v 1.4 2008/11/20 22:18:50 baker Exp baker $
+d12 1
+d15 5
+d41 1
+a41 1
+   function Start_Time (M : in Object) return Time is
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: aperiodic_workloads.adb,v 1.3 2008/11/20 18:49:43 baker Exp baker $
+a20 2
+      J.Execution_Time :=
+        Time (Exp_Dist (M.Parms.Mean_Execution_Time));
+d23 5
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: aperiodic_workloads.adb,v 1.2 2008/11/19 14:25:53 baker Exp baker $
+d26 1
+a26 1
+         pragma Debug (Debug (1, "next inter-arrival_time = " & Time 'Image(IAT)));
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: aperiodic_workloads.adb,v 1.1 2008/11/19 12:04:57 baker Exp baker $
+d4 2
+d8 2
+a9 2
+   procedure Init (M : in out Object;
+                   P : Parameters) is
+d12 1
+a12 1
+   end Init;
+d16 1
+a16 1
+                     J : out Jobs.Object;
+d18 1
+d21 2
+a22 1
+      J.Execution_Time := Time (Exp_Dist (M.Parms.Mean_Execution_Time));
+d24 6
+a29 1
+      Next_Arrival_Time := T + Time (Exp_Dist (M.Parms.Mean_Interarrival_Time));
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+a1 1
+--  $Id$
+d7 1
+a7 1
+                   P : Parameters_Type) is
+@

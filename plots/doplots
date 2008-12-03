@@ -1,0 +1,4 @@
+#!/bin/sh
+gnuplot < plot.absolute
+latex plots.tex
+dvipdf plots

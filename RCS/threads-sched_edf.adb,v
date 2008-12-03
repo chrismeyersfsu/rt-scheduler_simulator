@@ -1,0 +1,153 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@-- @;
+
+
+1.2
+date	2008.11.23.01.54.28;	author baker;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.21.23.10.36;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@--  $Id: threads-sched_edf.adb,v 1.1 2008/11/21 23:10:36 baker Exp baker $
+
+--  EDF scheduler
+
+with Simulator;
+with Error_Log; use Error_Log;
+with Ada.Text_IO; use Ada.Text_IO;
+package body Threads.Sched_EDF is
+
+   type Policy_Ref is access all Object;
+
+   ------------
+   --  Init  --
+   ------------
+
+   procedure Init
+     (P : in out Object) is
+   begin
+      P.T.Priority := Time'Last;
+      P.T.Is_In_Ready_Queue := False;
+   end Init;
+
+   ---------------
+   --  New_Job  --
+   ---------------
+
+   --  This is called when a server starts working on a new job
+   --  from its queue.  We don't need this for most (all?)
+   --  aperiodic server policies, but we may need this to provide
+   --  the deadline for periodic tasks that are scheduled
+   --  according to individual job deadlines.
+
+   procedure New_Job
+     (P : in out Object;
+      J : in Jobs.Job) is
+   begin
+      P.Current_Job := J;
+      P.T.Priority := J.Absolute_Deadline;
+   end New_Job;
+
+end Threads.Sched_EDF;
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+a1 1
+--  $Id$
+a11 33
+   ----------------------------
+   --  Replenishment_Events  --
+   ----------------------------
+
+   ----------
+   --  Go  --
+   ----------
+
+   --  This is called whenever Current_Thread is set to a new
+   --  value, for the new thread.  It indicates that the
+   --  thread has just started or resumed executing, after
+   --  a suspension or preemption.
+
+   procedure Go
+     (P : in out Object) is
+   begin
+      null;
+   end Go;
+
+   ------------
+   --  Stop  --
+   ------------
+
+   --  This is called whenever Current_Thread is set to a new
+   --  value, for the old current thread.  It indicates that the
+   --  thread has been suspended or preempted.
+
+   procedure Stop
+     (P : in out Object) is
+   begin
+      null;
+   end Stop;
+
+a22 38
+   -------------------------
+   --  New_Current_Thread --
+   -------------------------
+
+   --  This is called for *ALL* threads :-( whenever the value of
+   --  Current_Thread has changed.
+
+   procedure New_Current_Thread
+     (P : Object) is
+   begin
+      null;
+   end New_Current_Thread;
+
+   -----------------
+   --  Unsuspend  --
+   -----------------
+
+   --  This is called whenever a thread has suspended itself.  For
+   --  a server, this means the server has no jobs in its queue.
+
+   procedure Unsuspend (P : Object) is
+   begin
+      null;
+   end Unsuspend;
+
+   ---------------
+   --  Suspend  --
+   ---------------
+
+   --  This is called whenever a thread that earlier suspended
+   --  itself wakes up. For a server, this means a job has arrived
+   --  for a server previously had no jobs in its queue.
+
+   procedure Suspend (P : in out Object) is
+   begin
+      null;
+   end Suspend;
+
+@

@@ -1,0 +1,116 @@
+head	1.4;
+access;
+symbols;
+locks; strict;
+comment	@-- @;
+
+
+1.4
+date	2008.11.23.01.54.28;	author baker;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.11.20.18.49.43;	author baker;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.11.19.14.25.53;	author baker;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.19.12.04.57;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@--  $Id
+
+with Ada.Text_IO;
+package body Error_Log is
+
+   Opened : Boolean := False;
+
+   procedure Open (Prefix : String := "default") is
+   begin
+      if Opened then return;
+      end if;
+      Create (Log, Out_File, Prefix & ".log");
+   exception when others=>
+      Open (Log, Out_File, Prefix & ".log");
+   end Open;
+
+   procedure Close is
+   begin
+      Close (Log);
+   end Close;
+
+   procedure Debug
+     (Threshold : Integer;
+      Msg : String) is
+   begin
+      if Debug_Level >= Threshold then
+         Put_Line (Log, Msg);
+      end if;
+   end Debug;
+
+end Error_Log;
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d26 1
+a26 1
+      if Debug_Level > Threshold then
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d5 1
+d7 1
+d12 1
+a12 1
+      Create (Errs, Out_File, Prefix & ".errors");
+d14 1
+a14 1
+      Open (Errs, Out_File, Prefix & ".errors");
+d16 1
+d19 1
+a19 1
+      Close (Errs);
+d21 10
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d10 1
+a10 1
+      create (Errs, Out_File, Prefix & ".errors");
+d12 1
+a12 1
+      open (Errs, Out_File, Prefix & ".errors");
+d14 4
+@

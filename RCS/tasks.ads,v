@@ -1,0 +1,286 @@
+head	1.6;
+access;
+symbols;
+locks; strict;
+comment	@-- @;
+
+
+1.6
+date	2008.11.23.21.33.20;	author baker;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.11.23.01.54.28;	author baker;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.11.20.18.49.43;	author baker;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.11.19.14.25.53;	author baker;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.11.19.12.04.57;	author baker;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.16.13.36.54;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@--  $Id: tasks.ads,v 1.5 2008/11/23 01:54:28 baker Exp baker $
+
+with Virtual_Times; use Virtual_Times;
+with Events;
+with Jobs;
+with Job_Queues;
+with Workload_Models;
+with Threads;
+with Stats;
+package Tasks is
+
+   type Task_Object is limited private;
+   type Task_Ref is access all Task_Object;
+
+   procedure Bind
+     (T : Task_Ref;
+      M : Workload_Models.Class_Ref;
+      P : Threads.Policies_Class_Ref;
+      Name : String);
+
+   --  bind workload model
+   --  and thread scheduling policy to task
+
+   procedure Initialize;
+   --  sets (or resets) all bound tasks to their starting states.
+
+   procedure Reset_Stats;
+   --  resets all statistics
+   --  can be used to gather statistics only after steady state is reached
+
+   function Get_Stats (T : Task_Object) return Stats.Data;
+
+   function Name (T : in Task_Object) return String;
+
+   generic
+     with procedure P (Item: in Task_Ref);
+   procedure Do_For_Every_Task;
+
+private
+
+   package Job_Arrival_Events is
+      type Object is new Events.Object with record
+         T : Task_Ref;
+      end record;
+      procedure Handler (E : in out Object);
+      function Name (E : Object) return String;
+   end Job_Arrival_Events;
+
+   package Job_Completion_Events is
+      type Object is new Events.Object with record
+         T : Task_Ref;
+      end record;
+      procedure Handler (E : in out Object);
+      function Name (E : Object) return String;
+   end Job_Completion_Events;
+
+   package Go_Events is
+      type Object is new Events.Object with record
+         T : Task_Ref;
+      end record;
+      procedure Handler (E : in out Object);
+      function Name (E : Object) return String;
+   end Go_Events;
+
+   package Stop_Events is
+      type Object is new Events.Object with record
+         T : Task_Ref;
+      end record;
+      procedure Handler (E : in out Object);
+      function Name (E : Object) return String;
+   end Stop_Events;
+
+   type Task_Object is record
+
+      -- internal execution state
+      Current_Job : Jobs.Job;
+      Pending_Jobs : Job_Queues.Object;
+      Running : Boolean;
+      Remaining_Exec_Time : Time;  --  of current job
+      Last_Time_Check : Time;
+      --  most recent time current job started/resumed execution
+      --  used to compute amount by which to decrement
+      --  remaining execution time
+
+      -- interface to scheduling services
+      Thread : Threads.Thread_Ref;
+
+      --  interface for simulator
+      Arrival : Job_Arrival_Events.Object;
+      Completion : Job_Completion_Events.Object;
+
+      --  interface for simulator and thread scheduler
+      Go : aliased Go_Events.Object;
+      Stop : aliased Stop_Events.Object;
+
+      --  to generate arrivals and execution times
+      Model : Workload_Models.Class_Ref;
+
+      --  for gathering statistics
+      Stats_Data : Stats.Data;
+
+      --  for assertion checking
+      Total_Exec_Time : Time;
+
+      --  for tracing
+      Name : String (1 .. 4);
+
+      --  to make up for bad initialization and binding design
+      Is_In_All_Tasks : Boolean := False;
+
+   end record;
+
+end Tasks;
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: tasks.ads,v 1.4 2008/11/20 18:49:43 baker Exp baker $
+d31 1
+a31 1
+   function Get_Stats (T : Task_Ref) return Stats.Data;
+d91 1
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: tasks.ads,v 1.3 2008/11/19 14:25:53 baker Exp baker $
+d79 1
+a79 2
+      Remaining_Execution_Time : Time;
+      --  of current job
+d88 1
+a88 1
+      -- interface for simulator
+d91 1
+a91 1
+      -- interface for simulator and thread scheduler
+d102 1
+a102 1
+      Total_Execution_Time : Time;
+d107 3
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: tasks.ads,v 1.2 2008/11/19 12:04:57 baker Exp baker $
+d15 15
+a29 5
+   procedure Init (T : in out  Task_Object;
+                   M : Workload_Models.Class_Ref);
+   --  idempotent, and so
+   --  can also be used to reset task to starting state
+
+d35 4
+d76 1
+a76 1
+      Current_Job : Jobs.Object;
+a77 1
+      Remaining_Execution_Time : Time; --  of current job
+d79 6
+a84 1
+      Last_Go_Time : Time;
+a87 2
+      Policy : Threads.Policies_Class_Ref;
+      Parms : Threads.Parameters_Class_Ref;
+d93 2
+a94 2
+      Go_Event : aliased Go_Events.Object;
+      Stop_Event : aliased Stop_Events.Object;
+d100 4
+a103 1
+      Data : Stats.Data;
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id$
+d15 3
+a17 1
+   --  idempotent
+a19 3
+   procedure Init (T : in out  Task_Object;
+                   M : Workload_Models.Class_Ref);
+   -- ?? add scheduling policy and parameters?
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 3
+d5 5
+d11 79
+a89 12
+   type Priority_Type is (Deadline, Fixed);
+   type Object is new Events.Object with record
+      --  event properties of task object
+      --  are used for job completions, preemptions, etc.
+      Next_Arrival_Time : Events.Time;
+      Predicted_Completion_Time : Events.Time;
+      Task_Priority_Model : Priority_Type;
+      Task_Priority : Events.Time; -- larger is higher
+      Job_Remaining_Execution_Time : Events.Time; --  of current job
+      Job_Deadline : Events.Time; -- absolute deadline of current job
+      Job_Budget : Events.Time; --  maximum time to run without preemption
+      Last_Start_Time : Events.Time;
+d91 1
+a91 4
+   type Object_Ref is access Object'Class;
+   procedure Run (T : access Object;
+                  Previous_Priority : Events.Time);
+   procedure Preempt (T : access Object);
+@

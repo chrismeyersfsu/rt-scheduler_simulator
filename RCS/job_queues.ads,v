@@ -1,0 +1,47 @@
+head	1.2;
+access;
+symbols;
+locks; strict;
+comment	@-- @;
+
+
+1.2
+date	2008.11.20.18.49.43;	author baker;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.19.12.04.57;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@--  $Id: job_queues.ads,v 1.1 2008/11/19 12:04:57 baker Exp baker $
+
+with Jobs; use Jobs;
+with Generic_Queues;
+package Job_Queues is new Generic_Queues (Jobs.Job);
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+a1 1
+--  $Id$
+d5 1
+a5 1
+package Job_Queues is new Generic_Queues (Jobs.Object);
+@

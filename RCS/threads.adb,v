@@ -1,0 +1,761 @@
+head	1.8;
+access;
+symbols;
+locks
+	baker:1.8; strict;
+comment	@-- @;
+
+
+1.8
+date	2008.11.24.02.05.39;	author baker;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2008.11.23.21.33.20;	author baker;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2008.11.23.01.54.28;	author baker;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.11.21.23.10.36;	author baker;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.11.20.22.18.50;	author baker;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.11.20.18.49.43;	author baker;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.11.19.14.25.53;	author baker;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.19.12.04.57;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@--  $Id: threads.adb,v 1.7 2008/11/23 21:33:20 baker Exp baker $
+
+--  The core of the logic is in procedure Schedule.  If you want
+--  to understand, that is the best place to start reading.
+
+--  See Threads.Sched_DSS (file threads-sched_dss.adb) for an
+--  example of the detailed work of a scheduling policy.
+
+with Simulator;
+with Error_Log; use Error_Log;  -- for file Log
+with Ada.Text_IO; use Ada.Text_IO;  -- for file Log
+with Ada.Strings; use Ada.Strings;
+with Ada.Strings.Fixed; use Ada.Strings.Fixed;
+package body Threads is
+
+   --  debugging tools
+
+   Scheduler_Active : Boolean := False;
+
+   procedure Trace_Context_Switch
+     (Threshold : Integer;
+      Current, Top : Thread_Ref) is
+   begin
+      if Debug_Level >= Threshold then
+         Put (Log, "   threads.schedule ");
+         if Current = null then
+            Put (Log, "null");
+         else
+            Put (Log, Trim (Current.Name, Right));
+         end if;
+         Put (Log, " -> ");
+         if Top = null then
+            Put (Log, "null");
+         else Put (Log, Trim (Top.Name, Right));
+         end if;
+         New_Line (Log);
+      end if;
+   end Trace_Context_Switch;
+
+   --  ordering relation for thread queues
+
+   function ">" (L, R : Thread_Ref) return Boolean is
+   begin
+      return L.Priority > R.Priority;
+   end ">";
+
+   package body Scheduling_Policies is
+
+      procedure Bind_Thread
+        (P : in out Object;
+         T : Thread_Ref) is
+      begin
+         P.T := T;
+      end Bind_Thread;
+
+      procedure New_Job
+        (P : in out Object;
+         J : Jobs.Job) is
+      begin
+         null;
+      end New_Job;
+
+      procedure Suspend
+        (P : in out Object) is
+      begin
+         null;
+      end Suspend;
+
+      procedure Unsuspend
+        (P : in out Object) is
+      begin
+         null;
+      end Unsuspend;
+
+      procedure New_Current_Thread
+        (P : in out Object) is
+      begin
+         null;
+      end New_Current_Thread;
+
+      procedure Go
+        (P : in out Object) is
+      begin
+         null;
+      end Go;
+
+      procedure Stop
+        (P : in out Object) is
+      begin
+         null;
+      end Stop;
+
+      procedure Idle
+        (P : in out Object) is
+      begin
+         null;
+      end Idle;
+
+   end Scheduling_Policies;
+
+   procedure Bind_Policy
+     (T : in out Thread_Ref;
+      P : Policies_Class_Ref) is
+   begin
+      T.Policy := P;
+   end Bind_Policy;
+
+   procedure Init (T : Thread_Ref) is
+   begin
+      T.Is_Suspended := True;
+      T.Is_In_Ready_Queue := False;
+      T.Policy.Init;
+   end Init;
+
+   procedure Reset_All is new
+     Threads_Queues.For_All (Init);
+
+   procedure Initialize is
+   begin
+      Current := Idle_Thread;
+      Total_Idle := 0;
+      Last_Idle_Time := Simulator.Current_Time;
+      Ready_Queue.Clear;
+      Policy_Suspended_Queue.Clear;
+      Reset_All (All_Threads);
+      Scheduler_Active := False;
+   end Initialize;
+
+   function New_Thread
+     (Go : Events.Class_Ref;
+      Stop : Events.Class_Ref;
+      Name : String)
+     return Thread_Ref is
+      T : Thread_Ref;
+   begin
+      T := new Thread;
+      T.Go := Go;
+      T.Stop := Stop;
+      T.Name := Name (Name'First .. Name'First + T.Name'Length - 1);
+      All_Threads.Add (T);
+      return T;
+   end New_Thread;
+
+   --  The following provides a mechanism for notifying all
+   --  threads of a context-switch event.  This is potentially
+   --  very inefficient, but it might be necessary for some
+   --  scheduling policies. With restricted visibility of
+   --  information, this may be needed to provide early
+   --  replenishment to multiple server threads if the system
+   --  becomes idle, for example.
+
+   --  ??? Consider keeping a separate list of threads for
+   --  policies that require this notification, to avoid the
+   --  overhead of processing the other threads?  Or, find some
+   --  even better way to reduce overhead?
+
+   procedure Notify_NCT (T : Thread_Ref) is
+   begin
+      T.Policy.New_Current_Thread;
+   end Notify_NCT;
+
+   procedure Notify_All_NCT is
+      new Threads_Queues.For_All (Notify_NCT);
+
+   procedure Notify_Idle (T : Thread_Ref) is
+   begin
+      T.Policy.Idle;
+   end Notify_Idle;
+
+   procedure Notify_All_Idle is
+      new Threads_Queues.For_All (Notify_Idle);
+
+   procedure Schedule is
+      Top : Thread_Ref;
+      Now : constant Time := Simulator.Current_Time;
+   begin
+
+      pragma Assert (not Scheduler_Active);
+      Scheduler_Active := True;
+
+      --  find highest priority thread
+
+      <<Restart_Schedule>>
+
+      if Ready_Queue.Is_Empty then
+          --  idle system
+          Top := Idle_Thread;
+          --  this is an ideal time to terminate simulation
+          if Policy_Suspended_Queue.Is_Empty then
+             Simulator.Check_Time;
+          end if;
+      else
+         Top := Ready_Queue.Front_Of;
+      end if;
+
+      if Top = Current then
+         pragma Debug (Trace_Context_Switch (5, Current, Top));
+         Scheduler_Active := False;
+         return;
+      end if;
+
+      if Current = Idle_Thread then
+         --  transition from idle to non-idle system
+         Total_Idle := Total_Idle + (Now - Last_Idle_Time);
+         --  ??? consider giving Idle_Thread a thread
+         --  and task object, so that we
+         --  can let Tasks track idle time?
+      else
+         Current.Stop.Event_Time := Now;
+         --  Tell policy plug-in that this thread is preempted or
+         --  suspended.
+         Current.Policy.Stop;
+         --  Tell task that is has stopped.
+         Current.Stop.Handler;
+      end if;
+
+      pragma Debug (Trace_Context_Switch (5, Current, Top));
+
+      -- ""context switch"
+      Current := Top;
+
+      --  Notify interested schedulers of the context switcht.
+      --  This gives them a chance to replenish budgets etc.  if
+      --  the system is becoming idle or if it has just dropped to
+      --  a lower priority level.
+
+      Notify_All_NCT (All_Threads);
+
+      --  ???  Can we do without the above?  Most or all of them
+      --  might not be interested!  This is a price we seem to be
+      --  paying for modularization.  ???  A real kernel scheduler
+      --  could not afford this kind of inefficient algorithm.
+      --  Think of a better way for schedulers to get the
+      --  information they need.
+
+      if Current = Idle_Thread then
+
+         --  Make the transistion to an idle system.
+
+         --  In case there are any scheduling policies that
+         --  require action in this case, we need provide
+         --  the following call-out.
+
+         Notify_All_Idle (All_Threads);
+
+         --  ??? Like Notify_All_NCT, the above is inefficient,
+         --  but it is not quite so bad here, since it only happens
+         --  when the system would otherwise be idle.
+
+         --  If a policy made some thread ready that
+         --  was not previously ready, we need to restart
+         --  the scheduler here, since it is not safe for
+         --  the policy to call the scheduler directly.
+
+         if not Ready_Queue.Is_Empty then
+            goto Restart_Schedule;
+         end if;
+
+         Last_Idle_Time := Now;
+      else
+         Current.Go.Event_Time := Now;
+         Current.Policy.Go;
+         Current.Go.Handler;
+      end if;
+
+      Scheduler_Active := False;
+
+   end Schedule;
+
+   procedure New_Job (T : Thread_Ref;
+                      J : Jobs.Job) is
+   begin
+      T.Policy.New_Job (J);
+   end New_Job;
+
+   procedure Suspend (T : Thread_Ref) is
+   begin
+      pragma Debug (Trace (2, Name (T.all) & "threads.suspend "));
+      pragma Assert (not T.Is_Suspended);
+      T.Is_Suspended := True;
+      if T.Is_In_Ready_Queue then
+         Ready_Queue.Delete (T);
+         T.Is_In_Ready_Queue := False;
+      else
+         Policy_Suspended_Queue.Delete (T);
+      end if;
+      --  call out to policy to indicate suspension
+      T.Policy.Suspend;
+   end Suspend;
+
+   procedure Unsuspend (T : Thread_Ref) is
+   begin
+      pragma Debug (Trace (2, Name (T.all) & "threads.unsuspend "));
+      pragma Assert (T.Is_Suspended);
+      T.Is_Suspended := False;
+      --  call out to policy, to possibly recompute priority
+      T.Policy.Unsuspend;
+      if not T.Is_Policy_Suspended then
+         Ready_Queue.Add (T);
+         T.Is_In_Ready_Queue := True;
+      else
+         Policy_Suspended_Queue.Add (T);
+      end if;
+   end Unsuspend;
+
+   procedure Policy_Suspend (T : Thread_Ref) is
+   begin
+      pragma Debug (Trace (2, Name (T.all) & "threads.policy_suspend"));
+      pragma Assert (not T.Is_Policy_Suspended);
+      T.Is_Policy_Suspended := True;
+      if T.Is_In_Ready_Queue then
+         Ready_Queue.Delete (T);
+         T.Is_In_Ready_Queue := False;
+         Policy_Suspended_Queue.Add (T);
+      end if;
+   end Policy_Suspend;
+
+   procedure Policy_Unsuspend
+     (T : Thread_Ref) is
+   begin
+      pragma Debug (Trace (2, Name (T.all) & "threads.policy_unsuspend"));
+      pragma Assert (T.Is_Policy_Suspended);
+      pragma Assert (not T.Is_In_Ready_Queue);
+      T.Is_Policy_Suspended := False;
+      if not T.Is_Suspended then
+         Ready_Queue.Add (T);
+         T.Is_In_Ready_Queue := True;
+         Policy_Suspended_Queue.Delete (T);
+      end if;
+   end Policy_Unsuspend;
+
+   procedure Policy_Unsuspend  -- obsolete
+     (T : Thread_Ref;
+      New_Priority : Time) is
+   begin
+      pragma Debug (Trace (2, Name (T.all) & "threads.policy_unsuspend"));
+      pragma Assert (New_Priority < Time'Last);
+      pragma Assert (T.Is_Policy_Suspended);
+      pragma Assert (not T.Is_In_Ready_Queue);
+      T.Is_Policy_Suspended := False;
+      if not T.Is_Suspended then
+         T.Priority := New_Priority;
+         Ready_Queue.Add (T);
+         T.Is_In_Ready_Queue := True;
+      end if;
+   end Policy_Unsuspend;
+
+   function Name (T : Thread) return String is
+   begin
+      return Trim (T.Name, Right) & ' ';
+   end Name;
+
+   function Total_Idle_Time return Time is
+   begin
+      return Total_Idle;
+   end Total_Idle_Time;
+
+end Threads;
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: threads.adb,v 1.6 2008/11/23 01:54:28 baker Exp baker $
+d18 2
+d124 1
+d126 1
+a172 2
+   Scheduler_Active : Boolean := False;
+
+d189 3
+a191 1
+          Simulator.Check_Time;
+d278 1
+a278 1
+      pragma Debug (Trace (1, Name (T.all) & "threads.suspend "));
+d284 2
+d293 1
+a293 1
+      pragma Debug (Trace (1, Name (T.all) & "threads.unsuspend "));
+d301 2
+d308 1
+a308 1
+      pragma Debug (Trace (1, Name (T.all) & "threads.policy_suspend"));
+d314 1
+d321 1
+a321 1
+      pragma Debug (Trace (1, Name (T.all) & "threads.policy_unsuspend"));
+d328 1
+d336 1
+a336 1
+      pragma Debug (Trace (1, Name (T.all) & "threads.policy_unsuspend"));
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: threads.adb,v 1.5 2008/11/21 23:10:36 baker Exp baker $
+d181 1
+a181 1
+<<Restart_Schedule>>
+d184 4
+a187 2
+         --  idle system
+         Top := Idle_Thread;
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: threads.adb,v 1.4 2008/11/20 22:18:50 baker Exp baker $
+d16 22
+d54 43
+d119 1
+a119 1
+      Last_Dispatching_Time := 0;
+d153 1
+a153 1
+   procedure Notify (T : Thread_Ref) is
+d156 9
+a164 1
+   end Notify;
+d166 2
+a167 2
+   procedure Notify_All is
+      new Threads_Queues.For_All (Notify);
+d181 2
+d191 1
+a191 14
+         if Debug_Level > 5 then
+            Put (Log, "threads.schedule ");
+            if Current = null then
+               Put (Log, "null ");
+            else
+               Put (Log, Current.Name);
+            end if;
+            Put (Log, "-> ");
+            if Top = null then
+               Put (Log, "null");
+            else Put (Log, Top.Name);
+            end if;
+            New_Line (Log);
+         end if;
+d199 3
+a202 1
+         --  tell current task that it is preempted or suspended
+d204 4
+a208 3
+         --  tell policy plug-in that this thread is preempted or
+         --  suspended
+         Current.Policy.Stop;
+d211 1
+a211 14
+      if Debug_Level > 3 then
+         Put (Log, "threads.schedule ");
+         if Current = null then
+            Put (Log, "null ");
+         else
+            Put (Log, Current.Name);
+         end if;
+         Put (Log, "-> ");
+         if Top = null then
+            Put (Log, "null");
+         else Put (Log, Top.Name);
+         end if;
+         New_Line (Log);
+      end if;
+a214 1
+      Last_Dispatching_Time := Now;
+d217 16
+a232 9
+      --  This gives them a chance to replenish budgets etc.
+      --  if the system is becoming idle or if it has just
+      --  dropped to a lower priority level.
+
+      --  ???  Most or all of them might not be interested!
+      --  This is a price we seem to be paying for modularization.
+      --  ???  A real kernel scheduler could not afford this
+      --  kind of inefficient algorithm.  Think of a better way
+      --  for schedulers to get the information they need.
+d234 3
+a236 1
+      Notify_All (All_Threads);
+d238 10
+a247 1
+      if Current = Idle_Thread then
+d249 3
+a251 6
+         --  Make the transistion to and idle system.
+         --  If there are any scheduling policies that
+         --  require action in this case, we need to provide
+         --  a mechanism here to execute the appropraite call-outs.
+         --  ???  Consider doing this by maintaining a list
+         --  of affected threads for each such call-out?
+d256 1
+a257 1
+         Current.Policy.Go;
+d272 1
+a272 1
+      pragma Debug (Debug (1, Name (T.all) & "threads.suspend "));
+d285 1
+a285 1
+      pragma Debug (Debug (1, Name (T.all) & "threads.unsuspend "));
+d290 1
+a290 1
+      if T.Priority < Time'Last then
+d298 3
+a300 2
+      pragma Debug (Debug (1, Name (T.all) & "threads.policy_suspend"));
+      T.Priority := Time'Last;
+d308 13
+d324 1
+a324 1
+      pragma Debug (Debug (1, Name (T.all) & "threads.policy_unsuspend"));
+d326 1
+a326 1
+      pragma Assert (T.Priority = Time'Last);
+d328 1
+d338 1
+a338 1
+      return "task " & Trim (T.Name, Right) & ' ';
+d341 1
+a341 1
+   procedure Set_Debug (Level : Integer) is
+d343 2
+a344 2
+      Debug_Level := Level;
+   end Set_Debug;
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: threads.adb,v 1.3 2008/11/20 18:49:43 baker Exp baker $
+d12 2
+d257 1
+a257 1
+      return "task " & T.Name;
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: threads.adb,v 1.2 2008/11/19 14:25:53 baker Exp baker $
+d98 1
+d134 1
+a134 1
+         Total_Idle := Total_Idle + (Simulator.Current_Time - Last_Idle_Time);
+d137 1
+a137 1
+         Current.Stop.Event_Time := Simulator.Current_Time;
+d161 1
+d185 1
+a185 1
+         Last_Idle_Time := Simulator.Current_Time;
+d187 1
+a187 1
+         Current.Go.Event_Time := Simulator.Current_Time;
+a245 1
+      T.Priority := New_Priority;
+d247 1
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: threads.adb,v 1.1 2008/11/19 12:04:57 baker Exp baker $
+d10 2
+a11 2
+with Error_Log; use Error_Log;  -- for file Errs
+with Ada.Text_IO; use Ada.Text_IO;  -- for file Errs
+d21 19
+a39 1
+   procedure Reset (T : Thread_Ref) is
+d43 2
+a44 3
+      Scheduling_Policies.Init (T.Policy.all, T);
+      T.Policy.Init (T);
+   end Reset;
+d47 1
+a47 1
+     Threads_Queues.For_All (Reset);
+a53 1
+      Last_Priority := Idle_Thread.Priority;
+d59 2
+a60 4
+     (Policy : Policies_Class_Ref;
+      Parms : Parameters_Class_Ref;
+      Go_Event : Events.Class_Ref;
+      Stop_Event : Events.Class_Ref;
+d66 3
+a68 5
+      Reset (T);
+      T.Policy := Policy;
+      T.Parms := Parms;
+      T.Go_Event := Go_Event;
+      T.Stop_Event := Stop_Event;
+a69 1
+      Reset (T);
+d88 1
+a88 1
+      T.Policy.New_Current_Thread (T);
+d94 2
+d100 3
+d113 15
+d135 6
+a140 4
+         --  tell current thread that it is preempted
+         Current.Stop_Event.Handler;
+         --  tell policy plug-in that this thread is preempted
+         Current.Policy.Stop (Current);
+d143 13
+a155 4
+      Last_Priority := Current.Priority;
+
+      if Debug_Level > 1 then
+         Put_Line (Errs, "Threads : Schedule " &  Current.Name & " -> " & Top.Name);
+d185 3
+a187 2
+         Current.Go_Event.Handler;
+         Current.Policy.Go (Current);
+d190 2
+d194 7
+a200 1
+   procedure Suspend (T: Thread_Ref) is
+d202 1
+d210 1
+a210 4
+      T.Policy.Suspend (T);
+      if Debug_Level > 1 then
+         Put_Line (Errs, "Threads : Suspend " & T.Name);
+      end if;
+d213 1
+a213 1
+   procedure Unsuspend (T: Thread_Ref) is
+d215 1
+d219 1
+a219 1
+      T.Policy.Unsuspend (T);
+d224 24
+a247 2
+      if Debug_Level > 1 then
+         Put_Line (Errs, "Threads : Unsuspend " & T.Name);
+d249 1
+a249 1
+   end Unsuspend;
+d251 1
+a251 1
+   function Name (T: Thread) return String is
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+a1 1
+--  $Id$
+d10 2
+d113 1
+a113 3
+         Simulator.Put_Line ("Simulator: " &
+                               Current.Name &
+                               " -> " & Top.Name);
+d160 1
+a160 1
+         Simulator.Put_Line ("Scheduler : Suspend " & T.Name);
+d175 1
+a175 1
+         Simulator.Put_Line ("Scheduler : Unsuspend " & T.Name);
+@

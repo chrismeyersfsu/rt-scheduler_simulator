@@ -1,0 +1,554 @@
+head	1.8;
+access;
+symbols;
+locks
+	baker:1.8; strict;
+comment	@-- @;
+
+
+1.8
+date	2008.11.24.02.05.39;	author baker;	state Exp;
+branches;
+next	1.7;
+
+1.7
+date	2008.11.23.21.33.20;	author baker;	state Exp;
+branches;
+next	1.6;
+
+1.6
+date	2008.11.23.01.54.28;	author baker;	state Exp;
+branches;
+next	1.5;
+
+1.5
+date	2008.11.20.22.18.50;	author baker;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.11.20.18.49.43;	author baker;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.11.19.14.25.53;	author baker;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.11.19.12.04.57;	author baker;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.16.13.36.54;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.8
+log
+@*** empty log message ***
+@
+text
+@with Ada.Exceptions;
+with Ada.Text_IO;
+with Ada.Integer_Text_IO;
+with Ada.Strings; use Ada.Strings;
+with Ada.Strings.Fixed; use Ada.Strings.Fixed;
+with Virtual_Times; use Virtual_Times; -- for type Time
+with Events;
+with Error_Log; use Error_Log;  -- for file Log
+with System.Assertions;
+package body Simulator is
+
+   Now : Time :=0;
+   Stopping_Time : Time;
+   Latest_Stopping_Time : Time;
+   Event_Queue : Events.Queues.Object;
+
+   Every_Clock_Event : Events.Class_Ref;
+   --  a clumsy hook on which to hang an event that
+   --  need to be done every time the clock advances
+
+   function Current_Time return Time is
+   begin
+      return Now;
+   end Current_Time;
+
+   procedure Check_Time is
+   begin
+      if Now > Stopping_Time then
+         Put_Line (Log, "stopping simulation");
+         raise Simulation_Done;
+      end if;
+   end Check_Time;
+
+   procedure Check_Schedule (E : in out Events.Object'Class) is
+   begin
+      if E.Event_Time < Now then
+         Put_Line (Log, "* attempt to schedule an event in the past: " & E.Name);
+         pragma Assert (False);
+      elsif E.Event_Time = Time'Last then
+         Put_Line (Log, "* attempt to schedule an event at Time'Last: " & E.Name);
+         pragma Assert (False);
+      elsif E.Enqueued then
+         Put_Line (Log, "* attempt to schedule an already-queued event: " & E.Name);
+         pragma Assert (False);
+      end if;
+   end Check_Schedule;
+
+   procedure Check_Cancel (E : in out Events.Object'Class) is
+   begin
+      if not E.Enqueued then
+         Put_Line (Log, "* attempt to cancel an unqueued event: " & E.Name);
+         pragma Assert (False);
+      end if;
+   end Check_Cancel;
+
+   procedure Schedule_Event (E : in out Events.Object'Class) is
+   begin
+      pragma Debug (Check_Schedule (E));
+      Event_Queue.Add (E'Unchecked_Access);
+      E.Enqueued := True;
+   end Schedule_Event;
+
+   procedure Set_Every_Clock_Event (E : in out Events.Object'Class) is
+      use Events;
+   begin
+      pragma Assert (Every_Clock_Event = null);
+      Every_Clock_Event := E'Unchecked_Access;
+   end Set_Every_Clock_Event;
+
+   procedure Cancel_Event (E : in out Events.Object'Class) is
+   begin
+      pragma Debug (Check_Cancel (E));
+      Event_Queue.Delete (E'Unchecked_Access);
+      E.Event_Time := Time'Last;
+      E.Enqueued := False;
+   end Cancel_Event;
+
+   --  Debugging support
+
+   procedure Show_Event_Queue (F : File_Type; Long : Boolean := False) is
+      procedure Show_Event (E : Events.Class_Ref) is
+      begin
+         Put (F, " ["); Put (F, E.Name); Put (F, "]");
+         if Long then New_Line (F);
+         end if;
+      end Show_Event;
+      procedure Show_All is new Events.Queues.For_All (Show_Event);
+   begin
+      if Long then
+         Put_Line (F, "event_queue: ");
+      end if;
+      Show_All (Event_Queue);
+      if not Long then New_Line (F);
+      end if;
+   end Show_Event_Queue;
+
+   procedure Trace_Event_Queue (Threshold : Integer;
+                               Message : String) is
+   begin
+      if Debug_Level >= Threshold then
+         Put_Line (Log, Message);
+         Show_Event_Queue (Log, Long => False);
+      end if;
+   end Trace_Event_Queue;
+
+   procedure Trace_Event
+     (Threshold : Integer;
+      E : Events.Class_Ref) is
+   begin
+      if Debug_Level >= Threshold then
+         Put_Line (Log, "   __________"
+                     & Trim (Time'Image (Now), Left)
+                     & "__________");
+         Put (Log, E.all.Name);
+         if Debug_Level >= Threshold  then
+            Show_Event_Queue (Log, Long => False);
+         else
+            New_Line (Log);
+         end if;
+      end if;
+   end Trace_Event;
+
+   procedure Stop is
+   begin
+      Stopping_Time := Now;
+   end Stop;
+
+   procedure Run (Latest_Stop_Time : Time) is
+   begin
+      Run (Latest_Stop_Time, Latest_Stop_Time);
+   end Run;
+
+   procedure Initialize is
+   begin
+      Now := 0;
+      --  Do not use Events.Queues.Clear on this queue,
+      --  since it does not reset the .Is_Queued flag
+      --  of events it removes from the queue.
+      Events.Clear_Queue (Event_Queue);
+      Every_Clock_Event := null;
+   end Initialize;
+
+   procedure Run (Normal_Stop_Time,
+                  Latest_Stop_Time : Time) is
+      E : Events.Class_Ref;
+      use Ada.Text_IO;
+      use Ada.Integer_Text_IO;
+      use Events.Queues;
+      use Events;
+   begin
+      Trace (3, "simulator.run starting");
+      Stopping_Time := Normal_Stop_Time;
+      Latest_Stopping_Time := Latest_Stop_Time;
+      -- Queue simulation
+      loop
+         --  process events that occur at the same virtual time
+         while not Event_Queue.Is_Empty and then
+           Front_Of (Event_Queue).Event_Time = Now loop
+            --  remove next event from queue
+            E := Event_Queue.Front_Of;
+            Event_Queue.Pop;
+            E.Enqueued := False;
+            pragma Debug (Trace_Event (2, E));
+            E.Handler;
+         end loop;
+         if Every_Clock_Event /= null then
+            Every_Clock_Event.Handler;
+         end if;
+         if Event_Queue.Is_Empty then
+            pragma Debug (Trace (0, "simulator: empty event queue"));
+            exit;
+         end if;
+         Now := Event_Queue.Front_Of.Event_Time;
+         if Now > Latest_Stopping_Time then
+            pragma Debug (Trace (0, "simulator: past latest stop time"));
+            exit;
+         end if;
+      end loop;
+      Trace_Event_Queue (0,  "simulator: abnormal completion (see log file for details)");
+      Put_Line ("simulator : abnormal completion");
+   exception
+      when Simulation_Done =>
+         Trace_Event_Queue (0,  "simulator: normal completion");
+      when X : others =>
+         Put_Line ("simulator : exceptional completion (see log file for details)");
+         Trace_Event_Queue (0,  "simulator: exceptional completion");
+         Put (Log, "exception " & Ada.Exceptions.Exception_Name (X));
+         Put (Log, " in Simulator.Run at ");
+         Put_Line (Log, Ada.Exceptions.Exception_Message (X));
+         Put (Log, "last event: ");
+         Put (Log, Name (E.all)); New_Line (Log);
+         raise;
+   end Run;
+
+end Simulator;
+@
+
+
+1.7
+log
+@*** empty log message ***
+@
+text
+@d115 1
+a115 1
+         if Debug_Level > Threshold  then
+d163 1
+a163 1
+            pragma Debug (Trace_Event (1, E));
+d170 1
+a170 1
+            pragma Debug (Trace (1, "simulator: empty event queue"));
+d175 1
+a175 1
+            pragma Debug (Trace (1, "simulator: past latest stop time"));
+d179 2
+a180 1
+      Trace_Event_Queue (1,  "simulator: abnormal completion");
+d183 1
+a183 1
+         Trace_Event_Queue (1,  "simulator: normal completion");
+d185 2
+a186 1
+         Trace_Event_Queue (1,  "simulator: exceptional completion");
+@
+
+
+1.6
+log
+@*** empty log message ***
+@
+text
+@d133 1
+a133 1
+   procedure Reset is
+d141 1
+a141 1
+   end Reset;
+a179 1
+      Reset;
+a182 1
+         Reset;
+a189 1
+         Reset;
+@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@d4 2
+d9 1
+d12 1
+a12 1
+   Now : Time;
+d14 1
+d26 30
+d58 1
+a58 3
+      pragma Assert (E.Event_Time >= Now);
+      pragma Assert (E.Event_Time < Time'Last);
+      pragma Assert (not E.Enqueued);
+d72 1
+a72 3
+      pragma Assert (E.Event_Time >= Now);
+      pragma Assert (E.Event_Time < Time'Last);
+      pragma Assert (E.Enqueued);
+d78 2
+d97 26
+d129 16
+d151 3
+a153 2
+      Now := 0;
+      Stopping_Time := Latest_Stop_Time;
+d163 1
+a163 14
+            if Debug_Level > 0 then
+               pragma Debug (Put_Line
+                             (Log, "        ,__________"
+                               & Time'Image (Now)
+                               & "_________"));
+               pragma Debug (Put (Log, Name (E.all)));
+               if Debug_Level > 1 then
+                  pragma Debug (Show_Event_Queue (Log, Long => False));
+                  null;
+               else
+                  pragma Debug (New_Line (Log));
+                  null;
+               end if;
+            end if;
+d170 1
+a170 1
+            pragma Debug (Debug (1, "simulator exited for empty event queue"));
+d174 2
+a175 6
+         if Now > Stopping_Time then
+            pragma Debug (Debug (1, "simulator exited for time past" &
+                           Time'Image (Stopping_Time)));
+            if Debug_Level > 1 then
+               Show_Event_Queue (Log);
+            end if;
+d179 2
+d183 2
+a184 1
+         Clear (Event_Queue);
+d186 1
+d192 1
+a192 1
+         Clear (Event_Queue);
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@a5 1
+with Event_Queues;
+d11 1
+a11 1
+   Event_Queue : Event_Queues.Object;
+d55 1
+a55 1
+      procedure Show_All is new Event_Queues.For_All (Show_Event);
+d74 1
+a74 1
+      use Event_Queues;
+d89 4
+a92 1
+               pragma Debug (Put_Line (Log, "         ^^^^^^^^^^^"));
+d112 1
+a112 1
+         if Now >= Stopping_Time then
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d7 1
+a7 1
+with Error_Log; use Error_Log;  -- for file Errs
+d11 1
+d25 1
+d27 1
+d29 1
+d41 1
+d43 1
+d46 1
+d49 23
+a71 1
+   procedure Run is
+d79 1
+d88 12
+d105 4
+a108 1
+         exit when Event_Queue.Is_Empty;
+d110 8
+a118 1
+
+d123 5
+a127 4
+         Put (Errs, "exception " & Ada.Exceptions.Exception_Name (X));  New_Line (Errs);
+         Put (Errs, Ada.Exceptions.Exception_Message (X));  New_Line (Errs);
+         Put (Errs, "in Simulator.Run at time: ");  put (Errs, Integer (Now), 7);  New_Line (Errs);
+         Put (Errs, Name (E.all)); New_Line (Errs);
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@a41 5
+   procedure Put_Line (Message : String) is
+   begin
+      Ada.Text_IO.Put_Line (Errs, Message);
+   end Put_Line;
+
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d2 1
+d4 1
+a4 3
+with Ada.Float_Text_IO;
+with Ada.Text_IO;
+with Generic_Queues;
+d6 2
+d10 1
+a10 18
+   Errs : Ada.Text_IO.File_Type;
+
+   function ">" (L, R : Events.Object_Ref) return Boolean is
+      use Events;
+   begin
+      if L.Time > R.Time then
+         return True;
+      elsif L.Time = R.Time then
+         return L.Kind >= R.Kind;
+      else
+         return False;
+      end if;
+   end ">";
+   package Event_Queues is new
+     Generic_Queues (Events.Object_Ref);
+
+
+   Now : Events.Event_Time;
+a11 1
+   Every_Clock_Tick : Events.Object_Ref;
+d13 3
+a15 10
+   procedure Open (Log_Filename : String) is
+      use Ada.Text_IO;
+   begin
+      --  create log file
+      begin
+         create (Errs, Out_File, Log_Filename & ".errors");
+      exception when others=>
+         open (Errs, Out_File, Log_Filename & ".errors");
+      end;
+   end Open;
+d17 1
+a17 1
+   function Current_Time return Events.Event_Time is
+d22 1
+a22 1
+   procedure Schedule_Event (E : Events.Object_Ref) is
+d25 1
+a25 1
+      Event_Queue.Add (E);
+d28 1
+a28 1
+   procedure Every_Clock_Event (E : Events.Object_Ref) is
+d31 3
+a33 3
+      pragma Assert (Every_Clock_Tick = null);
+      Every_Clock_Tick := E;
+   end Every_Clock_Event;
+d35 1
+a35 1
+   procedure Cancel_Event (E : Events.Object_Ref) is
+d38 1
+a38 1
+      Event_Queue.Delete (E);
+d42 1
+a42 1
+   procedure Log_Message (Message : String) is
+d45 1
+a45 1
+   end Log_Message;
+d48 1
+a48 1
+      Event : Events.Object_Ref;
+a53 1
+
+a54 2
+      Clear (Event_Queue);
+
+d58 2
+a59 1
+         while Front_Of (Event_Queue).Time = Now loop
+d61 1
+a61 1
+            Event := Event_Queue.Front_Of;
+d63 1
+a63 1
+            Event.Event_Handler;
+d65 2
+a66 2
+         if Every_Clock_Tick /= null then
+            Every_Clock_Tick.Event_Handler;
+d68 2
+a69 1
+         Now := Event_Queue.Front_Of.Time;
+d73 5
+a77 3
+      when E : others =>
+         Put (Errs, "exception " & Ada.Exceptions.Exception_Name (E));  New_Line (Errs);
+         Put (Errs, Ada.Exceptions.Exception_Message (E));  New_Line (Errs);
+d79 2
+a80 1
+         Put (Errs, Events.Image (Event)); New_Line (Errs);
+@

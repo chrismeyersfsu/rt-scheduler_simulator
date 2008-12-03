@@ -1,0 +1,65 @@
+head	1.2;
+access;
+symbols;
+locks
+	baker:1.2; strict;
+comment	@% @;
+
+
+1.2
+date	2008.11.24.20.10.35;	author baker;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.24.19.25.28;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@% %W% %G%
+\documentstyle[11pt,epsf]{article}
+
+\def\epsfig#1#2{
+\begin{figure}[htpb]
+\hspace*{-1in}  \epsfbox{#1}
+ \caption{{\protect\small #2}}\label{#1}
+\end{figure}}
+
+\def\comment#1{}
+\begin{document}
+
+\epsfig{EDFAA.ps}{Mean aperiodic interarrival time 5400, 40\% Periodic Load}
+\epsfig{EDFAB.ps}{Mean aperiodic interarrival time 3600, 40\% Periodic Load}
+\epsfig{EDFAC.ps}{Mean aperiodic interarrival time 1800, 40\% Periodic Load}
+\epsfig{EDFBA.ps}{Mean aperiodic interarrival time 5400, 69\% Periodic Load}
+\epsfig{EDFBB.ps}{Mean aperiodic interarrival time 3600, 69\% Periodic Load}
+\epsfig{EDFBC.ps}{Mean aperiodic interarrival time 1800, 69\% Periodic Load}
+\epsfig{EDFCA.ps}{Mean aperiodic interarrival time 5400, 88\% Periodic Load}
+\epsfig{EDFCB.ps}{Mean aperiodic interarrival time 3600, 88\% Periodic Load}
+\epsfig{EDFCC.ps}{Mean aperiodic interarrival time 1800, 88\% Periodic Load}
+
+\end{document}
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@a22 4
+\epsfig{DSA.ps}{Deferrable servers, 40\% Periodic Load}
+\epsfig{DSB.ps}{Deferrable servers, 69\% Periodic Load}
+\epsfig{DSC.ps}{Deferrable servers, 88\% Periodic Load}
+
+@

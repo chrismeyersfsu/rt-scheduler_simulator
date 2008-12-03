@@ -1,0 +1,125 @@
+P1 scheduling
+P1 scheduled
+simulator.run starting
+   __________0__________
+P1 arrival @ 0
+P1 starts job that arrived at 0 with execution time 5
+P1 threads.unsuspend 
+   threads.schedule null -> P1
+P1 go @ 0
+   __________5__________
+P1 completion @ 5 [P1 arrival @ 10]
+P1 threads.suspend 
+P1 stop @ 5
+   threads.schedule P1 -> null
+   __________10__________
+P1 arrival @ 10
+P1 starts job that arrived at 10 with execution time 5
+P1 threads.unsuspend 
+   threads.schedule null -> P1
+P1 go @ 10
+   __________15__________
+P1 completion @ 15 [P1 arrival @ 20]
+P1 threads.suspend 
+P1 stop @ 15
+   threads.schedule P1 -> null
+   __________20__________
+P1 arrival @ 20
+P1 starts job that arrived at 20 with execution time 5
+P1 threads.unsuspend 
+   threads.schedule null -> P1
+P1 go @ 20
+   __________25__________
+P1 completion @ 25 [P1 arrival @ 30]
+P1 threads.suspend 
+P1 stop @ 25
+   threads.schedule P1 -> null
+   __________30__________
+P1 arrival @ 30
+P1 starts job that arrived at 30 with execution time 5
+P1 threads.unsuspend 
+   threads.schedule null -> P1
+P1 go @ 30
+   __________35__________
+P1 completion @ 35 [P1 arrival @ 40]
+P1 threads.suspend 
+P1 stop @ 35
+   threads.schedule P1 -> null
+   __________40__________
+P1 arrival @ 40
+P1 starts job that arrived at 40 with execution time 5
+P1 threads.unsuspend 
+   threads.schedule null -> P1
+P1 go @ 40
+   __________45__________
+P1 completion @ 45 [P1 arrival @ 50]
+P1 threads.suspend 
+P1 stop @ 45
+   threads.schedule P1 -> null
+   __________50__________
+P1 arrival @ 50
+P1 starts job that arrived at 50 with execution time 5
+P1 threads.unsuspend 
+   threads.schedule null -> P1
+P1 go @ 50
+   __________55__________
+P1 completion @ 55 [P1 arrival @ 60]
+P1 threads.suspend 
+P1 stop @ 55
+   threads.schedule P1 -> null
+   __________60__________
+P1 arrival @ 60
+P1 starts job that arrived at 60 with execution time 5
+P1 threads.unsuspend 
+   threads.schedule null -> P1
+P1 go @ 60
+   __________65__________
+P1 completion @ 65 [P1 arrival @ 70]
+P1 threads.suspend 
+P1 stop @ 65
+   threads.schedule P1 -> null
+   __________70__________
+P1 arrival @ 70
+P1 starts job that arrived at 70 with execution time 5
+P1 threads.unsuspend 
+   threads.schedule null -> P1
+P1 go @ 70
+   __________75__________
+P1 completion @ 75 [P1 arrival @ 80]
+P1 threads.suspend 
+P1 stop @ 75
+   threads.schedule P1 -> null
+   __________80__________
+P1 arrival @ 80
+P1 starts job that arrived at 80 with execution time 5
+P1 threads.unsuspend 
+   threads.schedule null -> P1
+P1 go @ 80
+   __________85__________
+P1 completion @ 85 [P1 arrival @ 90]
+P1 threads.suspend 
+P1 stop @ 85
+   threads.schedule P1 -> null
+   __________90__________
+P1 arrival @ 90
+P1 starts job that arrived at 90 with execution time 5
+P1 threads.unsuspend 
+   threads.schedule null -> P1
+P1 go @ 90
+   __________95__________
+P1 completion @ 95 [P1 arrival @ 100]
+P1 threads.suspend 
+P1 stop @ 95
+   threads.schedule P1 -> null
+   __________100__________
+P1 arrival @ 100
+P1 starts job that arrived at 100 with execution time 5
+P1 threads.unsuspend 
+   threads.schedule null -> P1
+P1 go @ 100
+   __________105__________
+P1 completion @ 105 [P1 arrival @ 110]
+P1 threads.suspend 
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 110]

@@ -1,0 +1,194 @@
+head	1.5;
+access;
+symbols;
+locks; strict;
+comment	@-- @;
+
+
+1.5
+date	2008.11.23.01.54.28;	author baker;	state Exp;
+branches;
+next	1.4;
+
+1.4
+date	2008.11.20.22.18.50;	author baker;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.11.20.18.49.43;	author baker;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.11.19.12.04.57;	author baker;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.16.13.36.54;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.5
+log
+@*** empty log message ***
+@
+text
+@--  $Id: events.ads,v 1.4 2008/11/20 22:18:50 baker Exp baker $
+
+--  root type for Events class
+
+----------------------
+--  Event Ordering  --
+----------------------
+
+--  The field Events.Object.Ordinal serves to define an order for
+--  events that appear to occur at the same time.
+
+--  Of course, this may amount to a bit of a "cheat" since a true
+--  operating system would have some degree of indeterminacy in
+--  event ordering.  For example, the timer indicating a
+--  replenishment might go off just after the corresponding task
+--  has been preempted due to budget exhaustion, or a task
+--  might be preempted just before it completes.
+
+--  However, since we are dealing with rather coarse-grained
+--  integer time values, the simulation is cleaner if we enforce
+--  a consistent ordering on events that the simulation says
+--  should occur at the same integer time value.
+
+--  In particular, we can set the ordinal values to arrange
+--  that job completions are processed before job arrivals,
+--  replenishment events are processed before budget exhaustion
+--  timer events, and all replenishment-related events are
+--  processed after arrival and completion events.
+
+with Virtual_Times; use Virtual_Times;
+with Generic_Queues;
+package Events is
+
+   type Object is abstract tagged record
+
+      Event_Time : Time := Time'Last;
+
+      Enqueued : Boolean := False;
+
+      --  Enqueued is intended for debugging,
+      --  to catch events being re-queued before they
+      --  have occurred, or from being cancelled when
+      --  they have not been scheduled.
+
+      Ordinal : Integer := Integer'Last;
+
+      --  Ordinal is to logically order certain kinds
+      --  of simultaneous events; use it with care.
+
+   end record;
+
+   type Class_Ref is access all Object'Class;
+
+   procedure Handler (E : in out Object) is abstract;
+
+   --  Handler is called by the simulator to implement
+   --  the action associated with the event.
+
+
+   function Name (E : Object) return String;
+
+   --  Name is used for event-tracing output.
+
+   function ">" (L, R : Class_Ref) return Boolean;
+
+   --  This relation is useful for ordering
+   --  events in the following generic queue type.
+
+   package Queues is new Generic_Queues (Class_Ref);
+
+   --  Clear_Queue should be used instead of Q.Clear,
+   --  in order to reset E.Enqueued.
+
+   procedure Clear_Queue (Q : in out Queues.Object);
+
+
+end Events;
+
+@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: events.ads,v 1.3 2008/11/20 18:49:43 baker Exp baker $
+d71 6
+d78 1
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: events.ads,v 1.2 2008/11/19 12:04:57 baker Exp baker $
+d5 25
+d31 1
+d35 1
+d37 1
+d39 6
+a44 2
+      --  the following is to logically order certain kinds
+      --  of simultaneous events; use it with care
+d46 4
+d52 2
+a54 1
+   function Name (E : Object) return String;   --  for tracing
+d56 8
+a63 2
+   --  for queuing events
+   type Class_Ref is access all Object'Class;
+d66 5
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id$
+d10 4
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 5
+d7 1
+a7 1
+   type Time is new Integer;
+d9 1
+a9 1
+      Event_Time : Time;
+d11 8
+a18 3
+   type Object_Ref is access Object'Class;
+   procedure Event_Handler (E : in out Object);
+   function Event_Image (E : Object) return String;
+@

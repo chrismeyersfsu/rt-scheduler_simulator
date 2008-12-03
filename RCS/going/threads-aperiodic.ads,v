@@ -1,0 +1,43 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@-- @;
+
+
+1.1
+date	2008.11.23.21.33.20;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@--  $Id$
+
+-- base class for all aperiodic server policies
+
+--  ??? Consider putting parms explicitly into this type,
+--  and the providing a non-null Bind_Parms operation.
+
+with Aperiodic_Server_Parameters; use Aperiodic_Server_Parameters;
+package Threads.Aperiodic_Policies is
+
+   type Object is new
+     Threads.Scheduling_Policies.Object with null record;
+   
+   type Object_Class_Ref is access all Object'Class;
+
+   procedure Bind_Parms
+     (P : in out Object;
+      Parms : Aperiodic_Server_Parameters.Parameters) is abstract;
+
+end Threads.Aperiodic_Policies;
+@

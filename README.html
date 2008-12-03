@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<TITLE>README</TITLE>
+<LINK REL="stylesheet" TYPE="text/css" HREF="http://www.cs.fsu.edu/~baker/style.css" TITLE="StyleSheet">
+</HEAD>
+<BODY>
+<H1>Simulator for Aperiodic Server Scheduling Policies</H1>
+
+<P>author: <A HREF="http://www.cs.fsu.edu/~baker">Ted Baker</A><</P>
+
+<P>These programs were compiled and tested using GNAT GPL
+version 4-1-2008 under 64-bit Linux on an Intel platform.</P>
+
+<P>Use <A HREF="Makefile">make</A> to compile all the test programs.</P>
+<P>Run "test_four" to generate data that can be plotted with
+Gnuplot on files "<A HREF="EDFAA.pts">EDFAA.pts</A>", etc.</P>
+<P>To plot the data, use "make plots", and then look in subdirectory <A HREF="plots">plots</A>.</P>
+
+<P>The test programs (test_xxxx) write a little to the standard output file,
+but write most of their output to a correspondingly named log-file "test_xxx.log".</P>
+
+<P>To vary the amount of trace information logged, change the
+value of the variable <I>Debug_Level</I> that is set in each
+test's main progra (test_xxxx.adb).  (If I get time I will some
+day modify the programs to accept a command line parameter to
+specify this.)</P>
+
+<P>To implement a new scheduling policy (say "XXX"), create new
+files "threads-sched_XXX.ads" and "threads-sched_XXX.adb",
+starting from one of the pairs below.  Make changes as appropriate
+for your policy.  To test, modify one or more of the test programs
+below, replacing "DSS" by "XXX" at apprpriate places.</P>
+
+<P>Test programs and other configurable files:</P>
+<UL>
+
+<LI><P><A HREF="test_zero.adb">test_zero.adb</A> - tests simulation of
+one periodic task, using EDF scheduling.</P></LI>
+
+<LI><P><A HREF="test_one.adb">test_one.adb</A> - tests simulation of
+one aperiodic task, using DSS schedulnig.</P></LI>
+</LI>
+
+<LI><P><A HREF="test_two.adb">test_two.adb</A> - tests simulation of a system
+of two tasks:
+one aperiodic task, using DSS scheduling, and one periodic task,
+using EDF scheduling.</P></LI>
+
+<LI><P><A HREF="test_three.adb">test_three.adb</A> - tests simulation of
+a system of three tasks:
+one aperiodic task, using DSS scheduling, and two periodic tasks,
+using EDF scheduling.  Runs simulation four times, for different
+aperiodic utilization levels.</P></LI>
+
+<LI><P><A HREF="test_four.adb">test_four.adb</A> - repeatedly runs
+simulation of one aperiodic server task and ten periodic tasks,
+with a variety of periodic and aperiodic workloads and scheduling
+parameters, and three aperiodic scheduling policies (BGS =
+background server, PLS = polling server, and DSS = deadline
+sporardic server).  The set of workloads is specified by a
+separate Ada package (see sizes.ads below).  Output is in several
+files, which are suitable for plotting with Gnuplot.  This program
+can take a fairly long time to run.</P></LI>
+
+<LI><P><A HREF="sizes.ads">sizes.ads</A> - specifies policies, workloads, etc.
+for test_four.  You can edit this to add more policies, change workloads,etc.</P></LI>
+
+<LI><P><A HREF="test_five.adb">test_five.adb</A> - a crippled version of test_four,
+with the number of simulations reduced to one.  This is helpful for debugging,
+to reduce the running time and amount of output.</P></LI>
+
+<LI><P><A HREF="test_six.adb">test_six.adb</A> - tests simulation of one
+aperiodic task using the polling server (PLS) policy/LI>
+
+<LI><A HREF="threads-sched_pls.ads">threads-sched_pls.ads</A> - interface
+specification for polling server (PLS).</P></LI>
+
+<LI><P><A HREF="threads-sched_pls.adb">threads-sched_pls.adb</A> - implementation
+of polling server (PLS).</P></LI>
+
+<LI><P><A HREF="threads-sched_dss.ads">threads-sched_dss.ads</A> - interface
+specification for deadline sporadic server (DSS)</P></LI>
+
+<LI><P><A HREF="threads-sched_dss.ads">threads-sched_dss.ads</A> - implementation
+of deadline sporadic server (DSS)</P></LI>
+
+<LI><P><A HREF="report.adb">report.adb</A> - used by test_four to generate output files
+for Gnuplot and LaTeX.</P></LI>
+
+<LI><P><A HREF="2008.tgz">2008.tgz</A> - tar-file of this directory</P></LI>
+
+</UL>
+
+</BODY>
+</HTML>

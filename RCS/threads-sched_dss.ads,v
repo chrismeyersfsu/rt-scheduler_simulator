@@ -1,0 +1,194 @@
+head	1.4;
+access;
+symbols;
+locks; strict;
+comment	@-- @;
+
+
+1.4
+date	2008.11.23.21.33.20;	author baker;	state Exp;
+branches;
+next	1.3;
+
+1.3
+date	2008.11.23.01.54.28;	author baker;	state Exp;
+branches;
+next	1.2;
+
+1.2
+date	2008.11.20.18.49.43;	author baker;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.19.12.04.57;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.4
+log
+@*** empty log message ***
+@
+text
+@--  $Id: threads-sched_dss.ads,v 1.3 2008/11/23 01:54:28 baker Exp baker $
+
+-- deadline sporadic scheduler policy plug-in
+
+with Replenishments;
+with Aperiodic_Server_Parameters; use Aperiodic_Server_Parameters;
+with Threads.Aperiodic_Policies;
+package Threads.Sched_Dss is
+
+   type Object is new
+     Threads.Aperiodic_Policies.Object with private;
+
+   procedure Bind_Parms
+     (P : in out Object;
+      Parms : Aperiodic_Server_Parameters.Parameters);
+   procedure Init
+     (P : in out Object);
+   procedure Suspend
+     (P : in out Object);
+   procedure Unsuspend
+     (P : in out Object);
+   procedure New_Current_Thread
+     (P : in out Object);
+   procedure Go
+     (P : in out Object);
+   procedure Stop
+     (P : in out Object);
+
+private
+
+   package Replenishment_Events is
+      type Object is new Events.Object with record
+         T : Thread_Ref;
+      end record;
+      procedure Handler (E : in out Object);
+      function Name (E : Object) return String;
+   end Replenishment_Events;
+
+   package Budget_Exhaustion_Events is
+      type Object is new Events.Object with record
+         T : Thread_Ref;
+      end record;
+      procedure Handler (E : in out Object);
+      function Name (E : Object) return String;
+   end Budget_Exhaustion_Events;
+
+   type Object is new
+     Threads.Aperiodic_Policies.Object with record
+        -- parameters
+        Parms : Aperiodic_Server_Parameters.Parameters;
+        --  replenishment queue
+        R_Queue : Replenishments.Queues.Object;
+        --  events
+        Replenishment : aliased Replenishment_Events.Object;
+        Exhaustion: aliased Budget_Exhaustion_Events.Object;
+        --  for recent budget usage accounting
+        Usage : Time;
+        --  The amount of the current chunk that has
+        --  been used.  Invariant:
+        --  P.Usage <= P.R_Queue.Front_Of.R_Amount.
+        Last_Usage_Update_Time : Time;
+        --  The most recent time we checked this thread's
+        --  budget usage and updated T.P.Usage.
+   end record;
+
+end Threads.Sched_Dss;
+@
+
+
+1.3
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: threads-sched_dss.ads,v 1.2 2008/11/20 18:49:43 baker Exp baker $
+d7 1
+d11 1
+a11 1
+     Threads.Scheduling_Policies.Object with private;
+d48 1
+a48 1
+     Threads.Scheduling_Policies.Object with record
+@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@d1 1
+a1 1
+--  $Id: threads-sched_dss.ads,v 1.1 2008/11/19 12:04:57 baker Exp baker $
+a16 3
+   procedure New_Job
+     (P : in out Object;
+      J : in Jobs.Job);
+d20 1
+a20 1
+     (P : Object);
+d22 1
+a22 1
+     (P : Object);
+d48 15
+a62 5
+     Parms : Aperiodic_Server_Parameters.Parameters;
+     R_Queue : Replenishments.Queues.Object;
+     Replenishment : aliased Replenishment_Events.Object;
+     Exhaustion: aliased Budget_Exhaustion_Events.Object;
+     Current_Job : Jobs.Job;
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d1 1
+a1 1
+--  $Id$
+d5 2
+d10 1
+a10 1
+     Threads.Scheduling_Policies.Object with null record;
+d12 3
+d16 2
+d19 1
+a19 5
+      T : Thread_Ref);
+   procedure Change_Job
+     (P : Object;
+      T : Thread_Ref;
+      J : in Jobs.Object);
+d21 1
+a21 2
+     (P : Object;
+      T : Thread_Ref);
+d23 1
+a23 2
+     (P : Object;
+      T : Thread_Ref);
+d25 1
+a25 2
+     (P : Object;
+      Notified_Thread : Thread_Ref);
+d27 1
+a27 2
+     (P : Object;
+      T : Thread_Ref);
+d29 28
+a56 2
+     (P : Object;
+      T : Thread_Ref);
+@

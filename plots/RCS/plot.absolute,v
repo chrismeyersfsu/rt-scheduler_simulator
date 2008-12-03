@@ -1,0 +1,200 @@
+head	1.2;
+access;
+symbols;
+locks
+	baker:1.2; strict;
+comment	@# @;
+
+
+1.2
+date	2008.11.24.20.10.35;	author baker;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2008.11.24.19.15.49;	author baker;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.2
+log
+@*** empty log message ***
+@
+text
+@set terminal postscript eps "Times-Roman" 20
+set data style linespoints
+set size 1.3,1.3
+set xlabel "mean aperiodic load"
+set ylabel "mean response time"
+set yrange [0:10000]
+set xrange [0:0.6]
+set key top left
+set output "EDFAA.ps"
+plot "EDFAA.pts" using 1:2 title "EDF background" with linesp 1 2,\
+     "EDFAA.pts" using 1:3 title "EDF polling" with linesp 1 3,\
+     "EDFAA.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     ((1800.0*x)/(0.6-x)) title "M/M/0.6" with lines 4,\
+     ((1800.0*x)/(1.0-x)) title "M/M/1" with lines 3
+set xrange [0:0.3]
+set output "EDFBA.ps"
+plot "EDFBA.pts" using 1:2 title "EDF background" with linesp 1 2,\
+     "EDFBA.pts" using 1:3 title "EDF polling" with linesp 1 3,\
+     "EDFBA.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     ((1800.0*x)/(0.31-x)) title "M/M/0.31" with lines 4,\
+     ((1800.0*x)/(1.0-x)) title "M/M/1" with lines 3
+set xrange [0:0.12]
+set output "EDFCA.ps"
+plot "EDFCA.pts" using 1:2 title "EDF background" with linesp 1 2,\
+     "EDFCA.pts" using 1:3 title "EDF polling" with linesp 1 3,\
+     "EDFCA.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     ((1800.0*x)/(0.12-x)) title "M/M/0.12" with lines 4,\
+     ((1800.0*x)/(1.0-x)) title "M/M/1" with lines 3
+set xrange [0:0.6]
+set output "EDFAB.ps"
+plot "EDFAB.pts" using 1:2 title "EDF background" with linesp 1 2,\
+     "EDFAB.pts" using 1:3 title "EDF polling" with linesp 1 3,\
+     "EDFAB.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     ((3600.0*x)/(0.6-x)) title "M/M/0.6" with lines 4,\
+     ((3600.0*x)/(1.0-x)) title "M/M/1" with lines 3
+set xrange [0:0.3]
+set output "EDFBB.ps"
+plot "EDFBB.pts" using 1:2 title "EDF background" with linesp 1 2,\
+     "EDFBB.pts" using 1:3 title "EDF polling" with linesp 1 3,\
+     "EDFBB.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     ((3600.0*x)/(0.31-x)) title "M/M/0.31" with lines 4,\
+     ((3600.0*x)/(1.0-x)) title "M/M/1" with lines 3
+set xrange [0:0.12]
+set output "EDFCB.ps"
+plot "EDFCB.pts" using 1:2 title "EDF background" with linesp 1 2,\
+     "EDFCB.pts" using 1:3 title "EDF polling" with linesp 1 3,\
+     "EDFCB.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     ((3600.0*x)/(0.12-x)) title "M/M/0.12" with lines 4,\
+     ((3600.0*x)/(1.0-x)) title "M/M/1" with lines 3
+set xrange [0:0.6]
+set output "EDFAC.ps"
+plot "EDFAC.pts" using 1:2 title "EDF background" with linesp 1 2,\
+     "EDFAC.pts" using 1:3 title "EDF polling" with linesp 1 3,\
+     "EDFAC.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     ((5400.0*x)/(0.6-x)) title "M/M/0.6" with lines 4,\
+     ((5400.0*x)/(1.0-x)) title "M/M/1" with lines 3
+set xrange [0:0.3]
+set output "EDFBC.ps"
+plot "EDFBC.pts" using 1:2 title "EDF background" with linesp 1 2,\
+     "EDFBC.pts" using 1:3 title "EDF polling" with linesp 1 3,\
+     "EDFBC.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     ((5400.0*x)/(0.31-x)) title "M/M/0.31" with lines 4,\
+     ((5400.0*x)/(1.0-x)) title "M/M/1" with lines 3
+set xrange [0:0.12]
+set output "EDFCC.ps"
+plot "EDFCC.pts" using 1:2 title "EDF background" with linesp 1 2,\
+     "EDFCC.pts" using 1:3 title "EDF polling" with linesp 1 3,\
+     "EDFCC.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     ((5400.0*x)/(0.12-x)) title "M/M/0.12" with lines 4,\
+     ((5400.0*x)/(1.0-x)) title "M/M/1" with lines 3
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d5 1
+a5 1
+set ylabel "mean response time" 5
+d8 1
+a8 1
+set key 0.16,9250
+d10 3
+a12 4
+plot "EDFAA.pts" using 1:3 title "EDF polling" with linesp 1 2,\
+     "EDFAA.pts" using 1:4 title "EDF deferrable server" with linesp 1 3,\
+     "EDFAA.pts" using 1:5 title "EDF sporadic server" with linesp 1 4,\
+     "EDFAA.pts" using 1:6 title "EDF exchange server" with linesp 1 5,\
+a15 1
+set key 0.08,9250
+d17 3
+a19 4
+plot "EDFBA.pts" using 1:3 title "EDF polling" with linesp 1 2,\
+     "EDFBA.pts" using 1:4 title "EDF deferrable server" with linesp 1 3,\
+     "EDFBA.pts" using 1:5 title "EDF sporadic server" with linesp 1 4,\
+     "EDFBA.pts" using 1:6 title "EDF exchange server" with linesp 1 5,\
+a21 1
+set key 0.033,9253
+d24 3
+a26 4
+plot "EDFCA.pts" using 1:3 title "EDF polling" with linesp 1 2,\
+     "EDFCA.pts" using 1:4 title "EDF deferrable server" with linesp 1 3,\
+     "EDFCA.pts" using 1:5 title "EDF sporadic server" with linesp 1 4,\
+     "EDFCA.pts" using 1:6 title "EDF exchange server" with linesp 1 5,\
+a29 1
+set key 0.16,9250
+d31 3
+a33 4
+plot "EDFAB.pts" using 1:3 title "EDF polling" with linesp 1 2,\
+     "EDFAB.pts" using 1:4 title "EDF deferrable server" with linesp 1 3,\
+     "EDFAB.pts" using 1:5 title "EDF sporadic server" with linesp 1 4,\
+     "EDFAB.pts" using 1:6 title "EDF exchange server" with linesp 1 5,\
+a36 1
+set key 0.08,9250
+d38 3
+a40 4
+plot "EDFBB.pts" using 1:3 title "EDF polling" with linesp 1 2,\
+     "EDFBB.pts" using 1:4 title "EDF deferrable server" with linesp 1 3,\
+     "EDFBB.pts" using 1:5 title "EDF sporadic server" with linesp 1 4,\
+     "EDFBB.pts" using 1:6 title "EDF exchange server" with linesp 1 5,\
+a43 1
+set key 0.033,9250
+d45 3
+a47 4
+plot "EDFCB.pts" using 1:3 title "EDF polling" with linesp 1 2,\
+     "EDFCB.pts" using 1:4 title "EDF deferrable server" with linesp 1 3,\
+     "EDFCB.pts" using 1:5 title "EDF sporadic server" with linesp 1 4,\
+     "EDFCB.pts" using 1:6 title "EDF exchange server" with linesp 1 5,\
+a50 1
+set key 0.16,9250
+d52 3
+a54 4
+plot "EDFAC.pts" using 1:3 title "EDF polling" with linesp 1 2,\
+     "EDFAC.pts" using 1:4 title "EDF deferrable server" with linesp 1 3,\
+     "EDFAC.pts" using 1:5 title "EDF sporadic server" with linesp 1 4,\
+     "EDFAC.pts" using 1:6 title "EDF exchange server" with linesp 1 5,\
+a57 1
+set key 0.08,9250
+d59 3
+a61 4
+plot "EDFBC.pts" using 1:3 title "EDF polling" with linesp 1 2,\
+     "EDFBC.pts" using 1:4 title "EDF deferrable server" with linesp 1 3,\
+     "EDFBC.pts" using 1:5 title "EDF sporadic server" with linesp 1 4,\
+     "EDFBC.pts" using 1:6 title "EDF exchange server" with linesp 1 5,\
+a64 1
+set key 0.033,9250
+d66 3
+a68 4
+plot "EDFCC.pts" using 1:3 title "EDF polling" with linesp 1 2,\
+     "EDFCC.pts" using 1:4 title "EDF deferrable server" with linesp 1 3,\
+     "EDFCC.pts" using 1:5 title "EDF sporadic server" with linesp 1 4,\
+     "EDFCC.pts" using 1:6 title "EDF exchange server" with linesp 1 5,\
+a70 16
+set xrange [0:0.6]
+set key 0.16,9250
+set output "DSA.ps"
+plot "EDFAB.pts" using 1:4 title "EDF" with linesp 2 2,\
+     "rmsAB.pts" using 1:4 title "RMS" with linesp 1 3
+set xrange [0:0.3]
+set key 0.08,9250
+set output "DSB.ps"
+plot "EDFBB.pts" using 1:4 title "EDF" with linesp 2 2,\
+     "rmsBB.pts" using 1:4 title "RMS" with linesp 1 3
+set xrange [0:0.12]
+set key 0.033,9250
+set output "DSC.ps"
+plot "EDFCB.pts" using 1:4 title "EDF" with linesp 2 2,\
+     "rmsCB.pts" using 1:4 title "RMS" with linesp 1 3
+
+@
