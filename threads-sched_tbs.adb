@@ -2,7 +2,6 @@
 
 --  polling server scheduler
 
-with Replenishments; use Replenishments;
 with Simulator;
 with Error_Log; use Error_Log;
 with Ada.Text_IO; use Ada.Text_IO;
@@ -54,100 +53,7 @@ package body Threads.Sched_TBS is
       end if;
    end Trace_Priority;
 
-   ----------------------------
-   --  Replenishment_Events  --
-   ----------------------------
-
-   package body Replenishment_Events is
-
-      procedure Handler (E : in out Object) is
-         --  Cast type of policy
-         --  to the specific type for this policy.
-         P : constant Policy_Ref := Policy_Ref (E.T.Policy);
-         Now : constant Time := Simulator.Current_Time;
-      begin
-         pragma Debug (Trace (3, P.all, "replenishment handler (pls)"));
-
-         --  Schedule the next replenishment.
-         P.Replenishment.Event_Time := P.Replenishment.Event_Time +
-           P.Parms.Budget_Interval;
-         Simulator.Schedule_Event (P.Replenishment);
-
-         --  Replenish it, but only if it has work to do.
-         if not P.T.Is_Suspended then
-            --  Update the thread's priority (deadline) and
-            --  let it contend for the processor.
-            P.T.Priority := Now + P.Parms.Budget_Interval;
-            pragma Debug (Trace_Priority (5, P.all, "replenishment handler"));
-            --  Do the replenishment.
-            P.Usage := 0;
-            --  Policy unsuspend the thread
-            Policy_Unsuspend (E.T);
-            Schedule;
-         end if;
-
-      end Handler;
-
-      function Name (E : Object) return String is
-      begin
-         return Name (E.T.all) & "replenishment " & Events.Object (E).Name;
-      end Name;
-
-   end Replenishment_Events;
-
-   --------------------------------
-   --  Budget_Exhaustion_Events  --
-   --------------------------------
-
-   package body Budget_Exhaustion_Events is
-
-      procedure Handler (E : in out Object) is
-         P : constant Policy_Ref := Policy_Ref (E.T.Policy);
-      begin
-         pragma Debug (Trace (3, P.all, "chunk exhaustion handler (pls)"));
-         Schedule;
-      end Handler;
-
-      function Name (E : Object) return String is
-      begin
-         return Name (E.T.all)
-           & "budget_exhaustion " & Events.Object (E).Name;
-      end Name;
-
-   end Budget_Exhaustion_Events;
-
-   -----------------------
-   --  Enter_Scheduler  --
-   -----------------------
-
-   --  Enter_Scheduler is called whenever scheduler is
-   --  entered from a non-idle thread.  P corresponds to
-   --  Current, the currently executing task.
-
-   procedure Enter_Scheduler
-     (P : in out Object) is
-      Used : Time;
-      Now : constant Time := Simulator.Current_Time;
-   begin
-      pragma Debug (Trace (9, P, "enter scheduler (pls)"));
-
-      --  Update the cpu time usage of the curent thread,
-      --  and check for budget exhaustion.
-
-      Used := Now - P.Last_Usage_Update_Time;
-      P.Usage := P.Usage + Used;
-      P.Last_Usage_Update_Time := Now;
-      pragma Assert (P.Usage <= P.Parms.Budget);
-
-      if P.Usage = P.Parms.Budget then
-         --  budget is all consumed
-         if not P.T.Is_Policy_Suspended then
-            --  Suspend the server until the replenishment.
-            Policy_Suspend (P.T);
-         end if;
-      end if;
-
-   end Enter_Scheduler;
+ 
 
    ----------
    --  Go  --
@@ -160,19 +66,19 @@ package body Threads.Sched_TBS is
 
    procedure Go
      (P : in out Object) is
-      Now : constant Time := Simulator.Current_Time;
+      Now : Time := Simulator.Current_Time;
    begin
-      pragma Debug (Trace (9, P, "go handler (pls)"));
-
+--      pragma Debug (Trace (9, P, "go handler (pls)"));
+      Now := Simulator.Current_Time;
       --  Schedule a timer for when the current replenishment
       --  chunk will run out, assuming the thread runs that long.
 
-      P.Exhaustion.Event_Time := Now + (P.Parms.Budget - P.Usage);
-      Simulator.Schedule_Event (P.Exhaustion);
-      pragma Debug (Trace_Time (5, P,
-                                "chunk will exhaust (Go)", P.Exhaustion.Event_Time));
-      P.Last_Usage_Update_Time := Now;
-      pragma Debug (Trace (7, P, "last_usage_update_time (2)"));
+--      P.Exhaustion.Event_Time := Now + (P.Parms.Budget - P.Usage);
+--      Simulator.Schedule_Event (P.Exhaustion);
+--      pragma Debug (Trace_Time (5, P,
+--                                "chunk will exhaust (Go)", P.Exhaustion.Event_Time));
+--      P.Last_Usage_Update_Time := Now;
+--      pragma Debug (Trace (7, P, "last_usage_update_time (2)"));
 
    end Go;
 
@@ -187,15 +93,16 @@ package body Threads.Sched_TBS is
 
    procedure Stop
      (P : in out Object) is
+      Now : Time := Simulator.Current_Time;
    begin
-      pragma Debug (Trace (9, P, "stop handler (pls)"));
-
+--      pragma Debug (Trace (9, P, "stop handler (pls)"));
+      Now := Simulator.Current_Time;
       --  Cancel budget timeout, since this task is no longer running.
 
-      if P.Exhaustion.Enqueued then
-         Simulator.Cancel_Event (P.Exhaustion);
-         pragma Debug (Trace (5, P, "cancelled exhaustion"));
-      end if;
+--      if P.Exhaustion.Enqueued then
+--         Simulator.Cancel_Event (P.Exhaustion);
+--         pragma Debug (Trace (5, P, "cancelled exhaustion"));
+--      end if;
 
    end Stop;
 
@@ -218,17 +125,9 @@ package body Threads.Sched_TBS is
    procedure Init
      (P : in out Object) is
    begin
-      P.Usage := 0;
       P.T.Priority :=  Time'Last;
-      P.Replenishment.T := P.T;
-      P.Exhaustion.T := P.T;
-      --  set up first replenishment, at time zero
-      P.Replenishment.Event_Time := 0;
-      Simulator.Schedule_Event (P.Replenishment);
       P.T.Is_In_Ready_Queue := False;
-      Policy_Suspend (P.T);
-      --  to catch failure to set real value before use
-      P.Last_Usage_Update_Time := Time'Last;
+--      Policy_Suspend (P.T);
    end Init;
 
    ---------------
@@ -240,14 +139,118 @@ package body Threads.Sched_TBS is
 
    procedure Suspend (P : in out Object) is
    begin
-      pragma Debug (Trace (9, P, "suspend handler (pls)"));
+--      pragma Debug (Trace (9, P, "suspend handler (pls)"));
 
       --  Suspend the server until the next replenishment.
-
-      if not P.T.Is_Policy_Suspended then
-         Policy_Suspend (P.T);
-      end if;
+--      Put("Chris: Suspend() called");
+	Put("");
+--      if not P.T.Is_Policy_Suspended then
+--         Policy_Suspend (P.T);
+--      end if;
 
    end Suspend;
+
+   -----------------
+   --  Unsuspend  --
+   -----------------
+
+   --  This is called whenever a thread that earlier suspended
+   --  itself wakes up. For a server, this means a job has arrived
+   --  for a server previously had no jobs in its queue.
+
+   procedure Unsuspend (P : in out Object) is
+      Now : Time := Simulator.Current_Time;
+   begin
+      Now := Simulator.Current_Time;
+--      Put("Chris: Unsuspend() called");
+	Put("");
+--      if P.T.Priority = Time'Last then
+--         P.T.Priority := Simulator.Current_Time + P.Parms.Budget_Interval;
+--         pragma Debug (Trace_Priority (5, P'Unchecked_Access, "unsuspend"));
+--           Put("Priority HUUUUUUGE");
+--      end if;
+
+   end Unsuspend;
+
+-- Job arrives to empty server, set new deadline
+
+   procedure New_Job(P : in out Object; J : in Jobs.Job) is
+	Now : Time := Simulator.Current_time;
+	Max : Time;
+   begin
+-- I would like to actually change J.Absolute_Deadline here
+-- but J is immutable (in but not out)
+	Now := Simulator.Current_time;
+      	P.T.Priority := J.Absolute_Deadline;
+
+	if P.T.Priority = Time'Last then
+		Max := J.Arrival_time;
+	elsif J.Arrival_time >= P.T.Priority then
+		Max := J.Arrival_time;
+	else
+		Max := P.T.Priority;
+	end if;
+
+	-- replace 2 with (J.Execution_Time / Utilization of server)
+	P.T.Priority := Max + Time (J.Execution_Time * 2);
+--	Put("Chris: New_Job() New prio ++ ");
+--	Put("++ ");
+
+   end New_Job;
+
+   procedure Idle(P : in out Object) is
+
+   begin
+	P.T.Priority := Time'Last;
+--        Put("Chris: Idle() called");
+--	P.T.Priority := P.T.Priority;
+   end Idle;
+
+--   package body Job_Completion_Events is
+	
+--	procedure Handler (E : in out Object) is
+--      	   Now : Time := Simulator.Current_Time;
+--	begin
+--      	   Now := Simulator.Current_Time;
+--	end Handler;
+
+--   end Job_Completion_Events;
+
+--   procedure New_Job (P: in out Object; J : in out Jobs.Job) is
+--	Max : Time;
+--   begin
+
+-- 	if J.Arrival_time >= P.Current_Job.Absolute_Deadline then
+--	  Max := J.Arrival_Time;
+--	else
+--	  Max := P.Current_Job.Absolute_Deadline;
+--	end if;
+
+--	J.Absolute_Deadline := Max + (J.Execution_Time / (1/4));
+
+--   end New_Job;
+
+--   package body Job_Arrival_Events is
+
+--	procedure Handler (E : in out Object) is
+--           P : constant Policy_Ref := Policy_Ref (E.T.Policy);
+--           Now : Time := Simulator.Current_Time;
+--	   J : Jobs.Job;
+--	   Max : Time;
+--	begin
+--      	   Now := Simulator.Current_Time;
+
+--	   if J.Arrival_Time >= P.T.Current_Job.Absolute_Deadline then
+--	     Max := J.Arrival_Time;
+--	   else
+--	     Max := P.T.Current_Job.Absolute_Deadline;
+--	   end if;
+	   
+--		
+--	   Handler (E.T.all);	-- Call 'parent' (Task) Handler method/function
+--	end Handler;
+
+--   end Job_Arrival_Events;
+
 
 end Threads.Sched_TBS;
