@@ -1,0 +1,1245 @@
+>>>> testing server with policy: BGS, load 5%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3260968] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 5%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3260968] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 replenishment @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 5%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3260968] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 10%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 arrival @ 3263643] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 10%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P5 arrival @ 3276000] [A1 arrival @ 3276589] [P1 arrival @ 3277800] [A1 replenishment @ 3277800] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 10%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 arrival @ 3263643] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 15%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3259155] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 15%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3270785] [P1 arrival @ 3272400] [P2 arrival @ 3272400] [A1 replenishment @ 3272400] [P5 arrival @ 3276000] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 15%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3259155] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 20%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3272241] [P1 arrival @ 3272400] [P2 arrival @ 3272400] [P5 arrival @ 3276000] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 20%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3274084] [P5 arrival @ 3276000] [P1 arrival @ 3277800] [A1 replenishment @ 3277800] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 20%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3272241] [P1 arrival @ 3272400] [P2 arrival @ 3272400] [P5 arrival @ 3276000] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 25%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3275226] [P5 arrival @ 3276000] [P1 arrival @ 3277800] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 25%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3279868] [P1 arrival @ 3283200] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [A1 replenishment @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P5 arrival @ 3312000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 25%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3275226] [P5 arrival @ 3276000] [P1 arrival @ 3277800] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 30%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3260136] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 30%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3301527] [P1 arrival @ 3304800] [P2 arrival @ 3304800] [P3 arrival @ 3304800] [A1 replenishment @ 3304800] [P8 arrival @ 3307500] [P5 arrival @ 3312000] [P4 arrival @ 3321000] [P6 arrival @ 3326400] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 30%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3260136] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 35%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3275892] [P5 arrival @ 3276000] [P1 arrival @ 3277800] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 35%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3282896] [P1 arrival @ 3283200] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [A1 replenishment @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P5 arrival @ 3312000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 35%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3282896] [P1 arrival @ 3283200] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P5 arrival @ 3312000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 40%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3261097] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 40%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3261097] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 replenishment @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 40%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3261097] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 45%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3261097] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 45%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3267000] [P4 arrival @ 3267000] [A1 replenishment @ 3267000] [A1 arrival @ 3267082] [P2 arrival @ 3272400] [P5 arrival @ 3276000] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 45%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3267000] [P4 arrival @ 3267000] [A1 arrival @ 3267082] [P2 arrival @ 3272400] [P5 arrival @ 3276000] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 50%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3261097] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 50%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3277691] [P1 arrival @ 3277800] [A1 replenishment @ 3277800] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P5 arrival @ 3312000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 50%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3274995] [P5 arrival @ 3276000] [P1 arrival @ 3277800] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 55%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3338904] [P1 arrival @ 3342600] [P2 arrival @ 3348000] [P3 arrival @ 3348000] [P4 arrival @ 3348000] [P5 arrival @ 3348000] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000] [P6 arrival @ 3369600] [P8 arrival @ 3375000]
+>>>> testing server with policy: PLS, load 55%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3388559] [P1 arrival @ 3391200] [P2 arrival @ 3391200] [P3 arrival @ 3391200] [A1 replenishment @ 3391200] [P4 arrival @ 3402000] [P7 arrival @ 3402000] [P6 arrival @ 3412800] [P5 arrival @ 3420000] [P8 arrival @ 3442500] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 55%, mean IAT 1800, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P10 arrival @ 3360000] [A1 arrival @ 3360763] [P1 arrival @ 3364200] [P2 arrival @ 3369600] [P3 arrival @ 3369600] [P6 arrival @ 3369600] [P4 arrival @ 3375000] [P8 arrival @ 3375000] [P5 arrival @ 3384000] [P7 arrival @ 3402000] [P9 arrival @ 3456000]
+>>>> testing server with policy: BGS, load 3%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3299400] [A1 arrival @ 3299642] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 3%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3343499] [P1 arrival @ 3348000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [A1 replenishment @ 3348000] [P2 arrival @ 3355200] [P3 arrival @ 3360000] [P10 arrival @ 3360000] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P8 arrival @ 3420000]
+>>>> testing server with policy: DSS, load 3%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3299400] [A1 arrival @ 3299642] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 5%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 arrival @ 3305770] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 5%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3305770] [P6 arrival @ 3307500] [P1 arrival @ 3310200] [A1 replenishment @ 3310200] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 5%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 arrival @ 3305770] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 8%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3305828] [P6 arrival @ 3307500] [P1 arrival @ 3310200] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 8%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3359714] [P3 arrival @ 3360000] [P10 arrival @ 3360000] [P1 arrival @ 3364200] [A1 replenishment @ 3364200] [P2 arrival @ 3369600] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P5 arrival @ 3402000] [P8 arrival @ 3420000] [P9 arrival @ 3456000]
+>>>> testing server with policy: DSS, load 8%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3305828] [P6 arrival @ 3307500] [P1 arrival @ 3310200] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 10%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3303900] [P1 arrival @ 3304800] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 10%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3322925] [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P4 arrival @ 3326400] [A1 replenishment @ 3326400] [P8 arrival @ 3330000] [P3 arrival @ 3336000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000] [P6 arrival @ 3375000] [P7 arrival @ 3384000]
+>>>> testing server with policy: DSS, load 10%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3303900] [P1 arrival @ 3304800] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 13%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3306538] [P6 arrival @ 3307500] [P1 arrival @ 3310200] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 13%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3306538] [P6 arrival @ 3307500] [P1 arrival @ 3310200] [A1 replenishment @ 3310200] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 13%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3306538] [P6 arrival @ 3307500] [P1 arrival @ 3310200] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 15%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P4 arrival @ 3326400] [A1 arrival @ 3327454] [P8 arrival @ 3330000] [P3 arrival @ 3336000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000] [P6 arrival @ 3375000] [P7 arrival @ 3384000]
+>>>> testing server with policy: PLS, load 15%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3344440] [P1 arrival @ 3348000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [A1 replenishment @ 3348000] [P2 arrival @ 3355200] [P3 arrival @ 3360000] [P10 arrival @ 3360000] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P8 arrival @ 3420000]
+>>>> testing server with policy: DSS, load 15%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P2 arrival @ 3340800] [P1 arrival @ 3342600] [A1 arrival @ 3344440] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P3 arrival @ 3360000] [P10 arrival @ 3360000] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P8 arrival @ 3420000]
+>>>> testing server with policy: BGS, load 18%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3356471] [P1 arrival @ 3358800] [P3 arrival @ 3360000] [P10 arrival @ 3360000] [P2 arrival @ 3369600] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P5 arrival @ 3402000] [P8 arrival @ 3420000] [P9 arrival @ 3456000]
+>>>> testing server with policy: PLS, load 18%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P3 arrival @ 3360000] [P10 arrival @ 3360000] [A1 arrival @ 3360511] [P1 arrival @ 3364200] [A1 replenishment @ 3364200] [P2 arrival @ 3369600] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P5 arrival @ 3402000] [P8 arrival @ 3420000] [P9 arrival @ 3456000]
+>>>> testing server with policy: DSS, load 18%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3356471] [P1 arrival @ 3358800] [P3 arrival @ 3360000] [P10 arrival @ 3360000] [P2 arrival @ 3369600] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P5 arrival @ 3402000] [P8 arrival @ 3420000] [P9 arrival @ 3456000]
+>>>> testing server with policy: BGS, load 20%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P3 arrival @ 3360000] [P10 arrival @ 3360000] [A1 arrival @ 3360511] [P1 arrival @ 3364200] [P2 arrival @ 3369600] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P5 arrival @ 3402000] [P8 arrival @ 3420000] [P9 arrival @ 3456000]
+>>>> testing server with policy: PLS, load 20%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3410166] [P1 arrival @ 3412800] [P2 arrival @ 3412800] [P4 arrival @ 3412800] [A1 replenishment @ 3412800] [P8 arrival @ 3420000] [P3 arrival @ 3432000] [P6 arrival @ 3442500] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 20%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P3 arrival @ 3360000] [P10 arrival @ 3360000] [A1 arrival @ 3360511] [P1 arrival @ 3364200] [P2 arrival @ 3369600] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P5 arrival @ 3402000] [P8 arrival @ 3420000] [P9 arrival @ 3456000]
+>>>> testing server with policy: BGS, load 23%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3410166] [P1 arrival @ 3412800] [P2 arrival @ 3412800] [P4 arrival @ 3412800] [P8 arrival @ 3420000] [P3 arrival @ 3432000] [P6 arrival @ 3442500] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: PLS, load 23%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3595223] [P1 arrival @ 3596400] [A1 replenishment @ 3596400] [P2 arrival @ 3600000] [P3 arrival @ 3600000] [P7 arrival @ 3600000] [P8 arrival @ 3600000] [P10 arrival @ 3600000] [P5 arrival @ 3618000] [P4 arrival @ 3628800] [P6 arrival @ 3645000] [P9 arrival @ 3672000]
+>>>> testing server with policy: DSS, load 23%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3410166] [P1 arrival @ 3412800] [P2 arrival @ 3412800] [P4 arrival @ 3412800] [P8 arrival @ 3420000] [P3 arrival @ 3432000] [P6 arrival @ 3442500] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: BGS, load 25%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3437803] [P1 arrival @ 3439800] [P2 arrival @ 3441600] [P6 arrival @ 3442500] [P3 arrival @ 3456000] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 25%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P6 arrival @ 3712500] [P1 arrival @ 3715200] [P2 arrival @ 3715200] [P4 arrival @ 3715200] [A1 replenishment @ 3715200] [A1 arrival @ 3716851] [P3 arrival @ 3720000] [P10 arrival @ 3720000] [P5 arrival @ 3726000] [P7 arrival @ 3744000] [P8 arrival @ 3780000] [P9 arrival @ 3780000]
+>>>> testing server with policy: DSS, load 25%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3452502] [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P6 arrival @ 3510000] [P8 arrival @ 3510000]
+>>>> testing server with policy: BGS, load 28%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3436696] [P1 arrival @ 3439800] [P2 arrival @ 3441600] [P6 arrival @ 3442500] [P3 arrival @ 3456000] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 28%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3838414] [P1 arrival @ 3839400] [A1 replenishment @ 3839400] [P3 arrival @ 3840000] [P10 arrival @ 3840000] [P2 arrival @ 3844800] [P4 arrival @ 3844800] [P6 arrival @ 3847500] [P8 arrival @ 3870000] [P5 arrival @ 3888000] [P7 arrival @ 3888000] [P9 arrival @ 3888000]
+>>>> testing server with policy: DSS, load 28%, mean IAT 1800, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3664654] [P1 arrival @ 3666600] [P2 arrival @ 3672000] [P3 arrival @ 3672000] [P4 arrival @ 3672000] [P5 arrival @ 3672000] [P7 arrival @ 3672000] [P9 arrival @ 3672000] [P8 arrival @ 3690000] [P6 arrival @ 3712500] [P10 arrival @ 3720000]
+>>>> testing server with policy: BGS, load 1%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3326228] [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 1%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3397239] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 replenishment @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 1%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3326228] [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 2%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [A1 arrival @ 3326573] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 2%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3399410] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 replenishment @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 2%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [A1 arrival @ 3326573] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 3%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3399736] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: PLS, load 3%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3399736] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 replenishment @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 3%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3399736] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: BGS, load 4%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3401293] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: PLS, load 4%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3559558] [P1 arrival @ 3564000] [P2 arrival @ 3564000] [P3 arrival @ 3564000] [P6 arrival @ 3564000] [P9 arrival @ 3564000] [A1 replenishment @ 3564000] [P4 arrival @ 3570000] [P5 arrival @ 3585600] [P7 arrival @ 3600000] [P8 arrival @ 3600000] [P10 arrival @ 3600000]
+>>>> testing server with policy: DSS, load 4%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3401293] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: BGS, load 5%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P4 arrival @ 3450000] [P1 arrival @ 3450600] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [A1 arrival @ 3456648] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 5%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P4 arrival @ 3450000] [P1 arrival @ 3450600] [A1 replenishment @ 3450600] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [A1 arrival @ 3456648] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: DSS, load 5%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P4 arrival @ 3450000] [P1 arrival @ 3450600] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [A1 arrival @ 3456648] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: BGS, load 6%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3454371] [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 6%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3657115] [P4 arrival @ 3660000] [P7 arrival @ 3660000] [P1 arrival @ 3661200] [P2 arrival @ 3661200] [A1 replenishment @ 3661200] [P3 arrival @ 3672000] [P5 arrival @ 3672000] [P6 arrival @ 3672000] [P9 arrival @ 3672000] [P8 arrival @ 3690000] [P10 arrival @ 3720000]
+>>>> testing server with policy: DSS, load 6%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3454371] [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: BGS, load 7%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P4 arrival @ 3600000] [P7 arrival @ 3600000] [P8 arrival @ 3600000] [P10 arrival @ 3600000] [P1 arrival @ 3601800] [A1 arrival @ 3602030] [P2 arrival @ 3607200] [P3 arrival @ 3607200] [P6 arrival @ 3618000] [P5 arrival @ 3628800] [P9 arrival @ 3672000]
+>>>> testing server with policy: PLS, load 7%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3668343] [P1 arrival @ 3672000] [P2 arrival @ 3672000] [P3 arrival @ 3672000] [P5 arrival @ 3672000] [P6 arrival @ 3672000] [P9 arrival @ 3672000] [A1 replenishment @ 3672000] [P4 arrival @ 3690000] [P8 arrival @ 3690000] [P7 arrival @ 3720000] [P10 arrival @ 3720000]
+>>>> testing server with policy: DSS, load 7%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P4 arrival @ 3600000] [P7 arrival @ 3600000] [P8 arrival @ 3600000] [P10 arrival @ 3600000] [P1 arrival @ 3601800] [A1 arrival @ 3602030] [P2 arrival @ 3607200] [P3 arrival @ 3607200] [P6 arrival @ 3618000] [P5 arrival @ 3628800] [P9 arrival @ 3672000]
+>>>> testing server with policy: BGS, load 8%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3563336] [P1 arrival @ 3564000] [P2 arrival @ 3564000] [P3 arrival @ 3564000] [P6 arrival @ 3564000] [P9 arrival @ 3564000] [P4 arrival @ 3570000] [P5 arrival @ 3585600] [P7 arrival @ 3600000] [P8 arrival @ 3600000] [P10 arrival @ 3600000]
+>>>> testing server with policy: PLS, load 8%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3670190] [P1 arrival @ 3672000] [P2 arrival @ 3672000] [P3 arrival @ 3672000] [P5 arrival @ 3672000] [P6 arrival @ 3672000] [P9 arrival @ 3672000] [A1 replenishment @ 3672000] [P4 arrival @ 3690000] [P8 arrival @ 3690000] [P7 arrival @ 3720000] [P10 arrival @ 3720000]
+>>>> testing server with policy: DSS, load 8%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P4 arrival @ 3660000] [P7 arrival @ 3660000] [P1 arrival @ 3661200] [P2 arrival @ 3661200] [A1 arrival @ 3663907] [P3 arrival @ 3672000] [P5 arrival @ 3672000] [P6 arrival @ 3672000] [P9 arrival @ 3672000] [P8 arrival @ 3690000] [P10 arrival @ 3720000]
+>>>> testing server with policy: BGS, load 9%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3671725] [P1 arrival @ 3672000] [P2 arrival @ 3672000] [P3 arrival @ 3672000] [P5 arrival @ 3672000] [P6 arrival @ 3672000] [P9 arrival @ 3672000] [P4 arrival @ 3690000] [P8 arrival @ 3690000] [P7 arrival @ 3720000] [P10 arrival @ 3720000]
+>>>> testing server with policy: PLS, load 9%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 4050000] [P2 arrival @ 4050000] [P4 arrival @ 4050000] [P6 arrival @ 4050000] [P8 arrival @ 4050000] [A1 replenishment @ 4050000] [A1 arrival @ 4051049] [P3 arrival @ 4060800] [P5 arrival @ 4060800] [P7 arrival @ 4080000] [P10 arrival @ 4080000] [P9 arrival @ 4104000]
+>>>> testing server with policy: DSS, load 9%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3671725] [P1 arrival @ 3672000] [P2 arrival @ 3672000] [P3 arrival @ 3672000] [P5 arrival @ 3672000] [P6 arrival @ 3672000] [P9 arrival @ 3672000] [P4 arrival @ 3690000] [P8 arrival @ 3690000] [P7 arrival @ 3720000] [P10 arrival @ 3720000]
+>>>> testing server with policy: BGS, load 10%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3672000] [P2 arrival @ 3672000] [P3 arrival @ 3672000] [P5 arrival @ 3672000] [P6 arrival @ 3672000] [P9 arrival @ 3672000] [A1 arrival @ 3673635] [P4 arrival @ 3690000] [P8 arrival @ 3690000] [P7 arrival @ 3720000] [P10 arrival @ 3720000]
+>>>> testing server with policy: PLS, load 10%, mean IAT 1800, and periodic load 88% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 completion @ 4320098] [A1 arrival @ 4320643] [A1 budget_exhaustion @ 4320648] [P1 arrival @ 4325400] [A1 replenishment @ 4325400] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4350000] [P5 arrival @ 4363200] [P6 arrival @ 4374000] [P7 arrival @ 4380000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 52678 Exec = 4266799 Now = 4320098
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: DSS, load 10%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 4190400] [P2 arrival @ 4190400] [P3 arrival @ 4190400] [P5 arrival @ 4190400] [A1 arrival @ 4191344] [P4 arrival @ 4200000] [P7 arrival @ 4200000] [P10 arrival @ 4200000] [P6 arrival @ 4212000] [P9 arrival @ 4212000] [P8 arrival @ 4230000]
+>>>> testing server with policy: BGS, load 11%, mean IAT 1800, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 4313449] [P1 arrival @ 4314600] [P2 arrival @ 4320000] [P3 arrival @ 4320000] [P4 arrival @ 4320000] [P5 arrival @ 4320000] [P6 arrival @ 4320000] [P7 arrival @ 4320000] [P8 arrival @ 4320000] [P9 arrival @ 4320000] [P10 arrival @ 4320000]
+>>>> testing server with policy: PLS, load 11%, mean IAT 1800, and periodic load 88% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 completion @ 4320360] [A1 budget_exhaustion @ 4320648] [A1 arrival @ 4321039] [P1 arrival @ 4325400] [A1 replenishment @ 4325400] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4350000] [P5 arrival @ 4363200] [P6 arrival @ 4374000] [P7 arrival @ 4380000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 12778 Exec = 4307161 Now = 4320360
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: DSS, load 11%, mean IAT 1800, and periodic load 88% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [P1 completion @ 4320300] [A1 replenishment @ 4320927] [A1 arrival @ 4321039] [P1 arrival @ 4325400] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4350000] [P5 arrival @ 4363200] [P6 arrival @ 4374000] [P7 arrival @ 4380000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 12130 Exec = 4307865 Now = 4320300
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: BGS, load 5%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257962] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 5%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257962] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 replenishment @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 5%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257962] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 10%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3258144] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 10%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3258144] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 replenishment @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 10%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3258144] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 15%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3258144] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 15%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3279889] [P1 arrival @ 3283200] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [A1 replenishment @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P5 arrival @ 3312000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 15%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3258144] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 20%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3259091] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 20%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3279889] [P1 arrival @ 3283200] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [A1 replenishment @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P5 arrival @ 3312000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 20%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3259091] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 25%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 arrival @ 3263938] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 25%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3279889] [P1 arrival @ 3283200] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [A1 replenishment @ 3283200] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P5 arrival @ 3312000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 25%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 arrival @ 3263938] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 30%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 arrival @ 3263938] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 30%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P2 arrival @ 3304800] [P3 arrival @ 3304800] [A1 replenishment @ 3304800] [P8 arrival @ 3307500] [A1 arrival @ 3310239] [P5 arrival @ 3312000] [P4 arrival @ 3321000] [P6 arrival @ 3326400] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 30%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 arrival @ 3263938] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 35%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 arrival @ 3263938] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 35%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P2 arrival @ 3304800] [P3 arrival @ 3304800] [A1 replenishment @ 3304800] [P8 arrival @ 3307500] [A1 arrival @ 3310239] [P5 arrival @ 3312000] [P4 arrival @ 3321000] [P6 arrival @ 3326400] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 35%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 arrival @ 3263938] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 40%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3267000] [P4 arrival @ 3267000] [A1 arrival @ 3269531] [P2 arrival @ 3272400] [P5 arrival @ 3276000] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 40%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P2 arrival @ 3304800] [P3 arrival @ 3304800] [A1 replenishment @ 3304800] [P8 arrival @ 3307500] [A1 arrival @ 3310239] [P5 arrival @ 3312000] [P4 arrival @ 3321000] [P6 arrival @ 3326400] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 40%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3267000] [P4 arrival @ 3267000] [A1 arrival @ 3269531] [P2 arrival @ 3272400] [P5 arrival @ 3276000] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 45%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3267000] [P4 arrival @ 3267000] [A1 arrival @ 3269531] [P2 arrival @ 3272400] [P5 arrival @ 3276000] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 45%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P8 arrival @ 3307500] [P1 arrival @ 3310200] [A1 replenishment @ 3310200] [A1 arrival @ 3310239] [P5 arrival @ 3312000] [P2 arrival @ 3315600] [P4 arrival @ 3321000] [P3 arrival @ 3326400] [P6 arrival @ 3326400] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 45%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P2 arrival @ 3304800] [P3 arrival @ 3304800] [P8 arrival @ 3307500] [A1 arrival @ 3310239] [P5 arrival @ 3312000] [P4 arrival @ 3321000] [P6 arrival @ 3326400] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 50%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P2 arrival @ 3304800] [P3 arrival @ 3304800] [P8 arrival @ 3307500] [A1 arrival @ 3310239] [P5 arrival @ 3312000] [P4 arrival @ 3321000] [P6 arrival @ 3326400] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 50%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3335901] [P1 arrival @ 3337200] [P2 arrival @ 3337200] [A1 replenishment @ 3337200] [P3 arrival @ 3348000] [P4 arrival @ 3348000] [P5 arrival @ 3348000] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000] [P6 arrival @ 3369600] [P8 arrival @ 3375000]
+>>>> testing server with policy: DSS, load 50%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P2 arrival @ 3304800] [P3 arrival @ 3304800] [P8 arrival @ 3307500] [A1 arrival @ 3310239] [P5 arrival @ 3312000] [P4 arrival @ 3321000] [P6 arrival @ 3326400] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 55%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P2 arrival @ 3304800] [P3 arrival @ 3304800] [P8 arrival @ 3307500] [A1 arrival @ 3310239] [P5 arrival @ 3312000] [P4 arrival @ 3321000] [P6 arrival @ 3326400] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 55%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3335901] [P1 arrival @ 3337200] [P2 arrival @ 3337200] [A1 replenishment @ 3337200] [P3 arrival @ 3348000] [P4 arrival @ 3348000] [P5 arrival @ 3348000] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000] [P6 arrival @ 3369600] [P8 arrival @ 3375000]
+>>>> testing server with policy: DSS, load 55%, mean IAT 3600, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3315600] [P2 arrival @ 3315600] [A1 arrival @ 3317240] [P4 arrival @ 3321000] [P3 arrival @ 3326400] [P6 arrival @ 3326400] [P5 arrival @ 3348000] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000] [P8 arrival @ 3375000]
+>>>> testing server with policy: BGS, load 3%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 arrival @ 3307370] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 3%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 replenishment @ 3304800] [A1 arrival @ 3307370] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 3%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 arrival @ 3307370] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 5%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 arrival @ 3307258] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 5%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 replenishment @ 3304800] [A1 arrival @ 3307258] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 5%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 arrival @ 3307258] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 8%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3310143] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 8%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P6 arrival @ 3307500] [A1 arrival @ 3310143] [P1 arrival @ 3310200] [A1 replenishment @ 3310200] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 8%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3310143] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 10%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P6 arrival @ 3307500] [A1 arrival @ 3308306] [P1 arrival @ 3310200] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 10%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P2 arrival @ 3340800] [A1 arrival @ 3342285] [P1 arrival @ 3342600] [A1 replenishment @ 3342600] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P3 arrival @ 3360000] [P10 arrival @ 3360000] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P8 arrival @ 3420000]
+>>>> testing server with policy: DSS, load 10%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 budget_exhaustion @ 3325950] [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [A1 arrival @ 3335492] [P3 arrival @ 3336000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000] [P6 arrival @ 3375000] [P7 arrival @ 3384000]
+>>>> testing server with policy: BGS, load 13%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P6 arrival @ 3307500] [A1 arrival @ 3308306] [P1 arrival @ 3310200] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 13%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P2 arrival @ 3340800] [A1 arrival @ 3342285] [P1 arrival @ 3342600] [A1 replenishment @ 3342600] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P3 arrival @ 3360000] [P10 arrival @ 3360000] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P8 arrival @ 3420000]
+>>>> testing server with policy: DSS, load 13%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P2 arrival @ 3340800] [A1 arrival @ 3342285] [P1 arrival @ 3342600] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P3 arrival @ 3360000] [P10 arrival @ 3360000] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P8 arrival @ 3420000]
+>>>> testing server with policy: BGS, load 15%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3325705] [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P3 arrival @ 3336000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000] [P6 arrival @ 3375000] [P7 arrival @ 3384000]
+>>>> testing server with policy: PLS, load 15%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P3 arrival @ 3432000] [P1 arrival @ 3434400] [A1 replenishment @ 3434400] [A1 arrival @ 3439446] [P2 arrival @ 3441600] [P6 arrival @ 3442500] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: DSS, load 15%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3325705] [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P3 arrival @ 3336000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000] [P6 arrival @ 3375000] [P7 arrival @ 3384000]
+>>>> testing server with policy: BGS, load 18%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3347365] [P1 arrival @ 3348000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P2 arrival @ 3355200] [P3 arrival @ 3360000] [P10 arrival @ 3360000] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P8 arrival @ 3420000]
+>>>> testing server with policy: PLS, load 18%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P3 arrival @ 3432000] [P1 arrival @ 3434400] [A1 replenishment @ 3434400] [A1 arrival @ 3439446] [P2 arrival @ 3441600] [P6 arrival @ 3442500] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: DSS, load 18%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P3 arrival @ 3432000] [P1 arrival @ 3434400] [A1 arrival @ 3439446] [P2 arrival @ 3441600] [P6 arrival @ 3442500] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: BGS, load 20%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P3 arrival @ 3432000] [P1 arrival @ 3434400] [A1 arrival @ 3439446] [P2 arrival @ 3441600] [P6 arrival @ 3442500] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 20%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3439446] [P1 arrival @ 3439800] [A1 replenishment @ 3439800] [P2 arrival @ 3441600] [P6 arrival @ 3442500] [P3 arrival @ 3456000] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: DSS, load 20%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3439446] [P1 arrival @ 3439800] [P2 arrival @ 3441600] [P6 arrival @ 3442500] [P3 arrival @ 3456000] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: BGS, load 23%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3439446] [P1 arrival @ 3439800] [P2 arrival @ 3441600] [P6 arrival @ 3442500] [P3 arrival @ 3456000] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 23%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P2 arrival @ 3441600] [P6 arrival @ 3442500] [P1 arrival @ 3445200] [A1 replenishment @ 3445200] [A1 arrival @ 3446917] [P3 arrival @ 3456000] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: DSS, load 23%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3439446] [P1 arrival @ 3439800] [P2 arrival @ 3441600] [P6 arrival @ 3442500] [P3 arrival @ 3456000] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: BGS, load 25%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3450600] [A1 arrival @ 3453453] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P6 arrival @ 3510000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 25%, mean IAT 3600, and periodic load 69% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4321101] [A1 budget_exhaustion @ 4321674] [A1 completion @ 4322706] [P1 arrival @ 4325400] [A1 replenishment @ 4325400] [P2 arrival @ 4334400] [P3 arrival @ 4344000] [P4 arrival @ 4363200] [P5 arrival @ 4374000] [P6 arrival @ 4387500] [P7 arrival @ 4392000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 202524 Exec = 4116638 Now = 4321101
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: DSS, load 25%, mean IAT 3600, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3453453] [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P6 arrival @ 3510000] [P8 arrival @ 3510000]
+>>>> testing server with policy: BGS, load 28%, mean IAT 3600, and periodic load 69% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4320220] [P1 completion @ 4320600] [P1 arrival @ 4325400] [P2 arrival @ 4334400] [P3 arrival @ 4344000] [P4 arrival @ 4363200] [P5 arrival @ 4374000] [P6 arrival @ 4387500] [P7 arrival @ 4392000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 97452 Exec = 4222427 Now = 4320220
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: PLS, load 28%, mean IAT 3600, and periodic load 69% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4320220] [A1 completion @ 4320305] [A1 budget_exhaustion @ 4321674] [P1 arrival @ 4325400] [A1 replenishment @ 4325400] [P2 arrival @ 4334400] [P3 arrival @ 4344000] [P4 arrival @ 4363200] [P5 arrival @ 4374000] [P6 arrival @ 4387500] [P7 arrival @ 4392000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 107587 Exec = 4211157 Now = 4320220
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: DSS, load 28%, mean IAT 3600, and periodic load 69% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4320220] [P1 completion @ 4320600] [A1 replenishment @ 4321103] [P1 arrival @ 4325400] [P2 arrival @ 4334400] [P3 arrival @ 4344000] [P4 arrival @ 4363200] [P5 arrival @ 4374000] [P6 arrival @ 4387500] [P7 arrival @ 4392000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 105913 Exec = 4213374 Now = 4320220
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: BGS, load 1%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [A1 arrival @ 3330107] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 1%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [A1 replenishment @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [A1 arrival @ 3330107] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 1%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [A1 arrival @ 3330107] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 2%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [A1 arrival @ 3329224] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 2%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3397722] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 replenishment @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 2%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [A1 arrival @ 3329224] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 3%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [A1 arrival @ 3332669] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 3%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3399472] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 replenishment @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 3%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3399472] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: BGS, load 4%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3401370] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: PLS, load 4%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3667618] [P1 arrival @ 3672000] [P2 arrival @ 3672000] [P3 arrival @ 3672000] [P5 arrival @ 3672000] [P6 arrival @ 3672000] [P9 arrival @ 3672000] [A1 replenishment @ 3672000] [P4 arrival @ 3690000] [P8 arrival @ 3690000] [P7 arrival @ 3720000] [P10 arrival @ 3720000]
+>>>> testing server with policy: DSS, load 4%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3451829] [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: BGS, load 5%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3449465] [P4 arrival @ 3450000] [P1 arrival @ 3450600] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 5%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3774022] [P1 arrival @ 3774600] [A1 replenishment @ 3774600] [P2 arrival @ 3780000] [P3 arrival @ 3780000] [P4 arrival @ 3780000] [P6 arrival @ 3780000] [P7 arrival @ 3780000] [P8 arrival @ 3780000] [P9 arrival @ 3780000] [P5 arrival @ 3801600] [P10 arrival @ 3840000]
+>>>> testing server with policy: DSS, load 5%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P4 arrival @ 3600000] [P7 arrival @ 3600000] [P8 arrival @ 3600000] [P10 arrival @ 3600000] [P1 arrival @ 3601800] [A1 arrival @ 3602325] [P2 arrival @ 3607200] [P3 arrival @ 3607200] [P6 arrival @ 3618000] [P5 arrival @ 3628800] [P9 arrival @ 3672000]
+>>>> testing server with policy: BGS, load 6%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3412308] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: PLS, load 6%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 replenishment @ 3402000] [A1 arrival @ 3412308] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 6%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3412308] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: BGS, load 7%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3402212] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: PLS, load 7%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [A1 replenishment @ 3456000] [A1 arrival @ 3457394] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: DSS, load 7%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3402212] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: BGS, load 8%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [A1 arrival @ 3457394] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 8%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [A1 replenishment @ 3456000] [A1 arrival @ 3457394] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: DSS, load 8%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [A1 arrival @ 3457394] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: BGS, load 9%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [A1 arrival @ 3456251] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 9%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 4187718] [P1 arrival @ 4190400] [P2 arrival @ 4190400] [P3 arrival @ 4190400] [P5 arrival @ 4190400] [A1 replenishment @ 4190400] [P4 arrival @ 4200000] [P7 arrival @ 4200000] [P10 arrival @ 4200000] [P6 arrival @ 4212000] [P9 arrival @ 4212000] [P8 arrival @ 4230000]
+>>>> testing server with policy: DSS, load 9%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [A1 arrival @ 3456251] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: BGS, load 10%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [A1 arrival @ 3456251] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 10%, mean IAT 3600, and periodic load 88% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 completion @ 4320080] [A1 budget_exhaustion @ 4320648] [A1 arrival @ 4321272] [P1 arrival @ 4325400] [A1 replenishment @ 4325400] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4350000] [P5 arrival @ 4363200] [P6 arrival @ 4374000] [P7 arrival @ 4380000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 72556 Exec = 4246898 Now = 4320080
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: DSS, load 10%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [A1 arrival @ 3456251] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: BGS, load 11%, mean IAT 3600, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 4318998] [P1 arrival @ 4320000] [P2 arrival @ 4320000] [P3 arrival @ 4320000] [P4 arrival @ 4320000] [P5 arrival @ 4320000] [P6 arrival @ 4320000] [P7 arrival @ 4320000] [P8 arrival @ 4320000] [P9 arrival @ 4320000] [P10 arrival @ 4320000]
+>>>> testing server with policy: PLS, load 11%, mean IAT 3600, and periodic load 88% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 completion @ 4320092] [A1 budget_exhaustion @ 4320648] [A1 arrival @ 4321272] [P1 arrival @ 4325400] [A1 replenishment @ 4325400] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4350000] [P5 arrival @ 4363200] [P6 arrival @ 4374000] [P7 arrival @ 4380000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 36640 Exec = 4282907 Now = 4320092
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: DSS, load 11%, mean IAT 3600, and periodic load 88% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [P1 completion @ 4320300] [A1 arrival @ 4321272] [A1 replenishment @ 4321562] [P1 arrival @ 4325400] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4350000] [P5 arrival @ 4363200] [P6 arrival @ 4374000] [P7 arrival @ 4380000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 35992 Exec = 4283874 Now = 4320300
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: BGS, load 5%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 arrival @ 3260646] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 5%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3260646] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 replenishment @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 5%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 arrival @ 3260646] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 10%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 10%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 replenishment @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 10%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 15%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 15%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 replenishment @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 15%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 20%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 20%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 replenishment @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 20%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 25%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 25%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 replenishment @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 25%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3256200] [A1 arrival @ 3257060] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 30%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 30%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 replenishment @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 30%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 35%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 35%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 replenishment @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 35%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 40%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 40%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 replenishment @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 40%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 45%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 45%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [A1 replenishment @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 45%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3257060] [P1 arrival @ 3261600] [P2 arrival @ 3261600] [P3 arrival @ 3261600] [P4 arrival @ 3267000] [P5 arrival @ 3276000] [P6 arrival @ 3283200] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 50%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3283200] [P2 arrival @ 3283200] [P3 arrival @ 3283200] [P6 arrival @ 3283200] [A1 arrival @ 3283393] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P8 arrival @ 3307500] [P5 arrival @ 3312000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 50%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P2 arrival @ 3304800] [P3 arrival @ 3304800] [A1 replenishment @ 3304800] [P8 arrival @ 3307500] [A1 arrival @ 3308861] [P5 arrival @ 3312000] [P4 arrival @ 3321000] [P6 arrival @ 3326400] [P7 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 50%, mean IAT 5400, and periodic load 40% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3292507] [P1 arrival @ 3294000] [P2 arrival @ 3294000] [P4 arrival @ 3294000] [P7 arrival @ 3294000] [P3 arrival @ 3304800] [P8 arrival @ 3307500] [P5 arrival @ 3312000] [P6 arrival @ 3326400] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 55%, mean IAT 5400, and periodic load 40% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4320147] [P1 completion @ 4320200] [P1 arrival @ 4325400] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4347000] [P5 arrival @ 4356000] [P6 arrival @ 4363200] [P7 arrival @ 4374000] [P8 arrival @ 4387500] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 162711 Exec = 4146341 Now = 4320147
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: PLS, load 55%, mean IAT 5400, and periodic load 40% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4320147] [A1 budget_exhaustion @ 4323240] [P1 arrival @ 4325400] [A1 replenishment @ 4325400] [A1 completion @ 4327639] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4347000] [P5 arrival @ 4356000] [P6 arrival @ 4363200] [P7 arrival @ 4374000] [P8 arrival @ 4387500] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 169694 Exec = 4146341 Now = 4320147
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: DSS, load 55%, mean IAT 5400, and periodic load 40% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 budget_exhaustion @ 4320050] [A1 arrival @ 4320147] [P1 arrival @ 4325400] [A1 completion @ 4325936] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4347000] [P5 arrival @ 4356000] [P6 arrival @ 4363200] [P7 arrival @ 4374000] [P8 arrival @ 4387500] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 167991 Exec = 4146341 Now = 4320050
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: BGS, load 3%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3300972] [P1 arrival @ 3304800] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 3%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3300972] [P1 arrival @ 3304800] [A1 replenishment @ 3304800] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 3%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3300972] [P1 arrival @ 3304800] [P6 arrival @ 3307500] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 5%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3311090] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 5%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 replenishment @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3311090] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 5%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3311090] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 8%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 8%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 replenishment @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 8%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 10%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 10%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 replenishment @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 10%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 13%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 13%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 replenishment @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 13%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 15%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 15%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 replenishment @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 15%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 18%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 18%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 replenishment @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 18%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 20%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 20%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 replenishment @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 20%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 23%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 23%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [A1 replenishment @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: DSS, load 23%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 25%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3304800] [P6 arrival @ 3307500] [A1 arrival @ 3308861] [P2 arrival @ 3312000] [P3 arrival @ 3312000] [P7 arrival @ 3312000] [P4 arrival @ 3326400] [P8 arrival @ 3330000] [P5 arrival @ 3348000] [P9 arrival @ 3348000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 25%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P2 arrival @ 3427200] [P1 arrival @ 3429000] [A1 replenishment @ 3429000] [A1 arrival @ 3429092] [P3 arrival @ 3432000] [P6 arrival @ 3442500] [P4 arrival @ 3456000] [P5 arrival @ 3456000] [P7 arrival @ 3456000] [P9 arrival @ 3456000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: DSS, load 25%, mean IAT 5400, and periodic load 69% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3358800] [A1 arrival @ 3359305] [P3 arrival @ 3360000] [P10 arrival @ 3360000] [P2 arrival @ 3369600] [P4 arrival @ 3369600] [P6 arrival @ 3375000] [P7 arrival @ 3384000] [P5 arrival @ 3402000] [P8 arrival @ 3420000] [P9 arrival @ 3456000]
+>>>> testing server with policy: BGS, load 28%, mean IAT 5400, and periodic load 69% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4320147] [P1 completion @ 4320600] [P1 arrival @ 4325400] [P2 arrival @ 4334400] [P3 arrival @ 4344000] [P4 arrival @ 4363200] [P5 arrival @ 4374000] [P6 arrival @ 4387500] [P7 arrival @ 4392000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 102017 Exec = 4216302 Now = 4320147
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: PLS, load 28%, mean IAT 5400, and periodic load 69% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4320147] [A1 budget_exhaustion @ 4321674] [P1 arrival @ 4325400] [A1 replenishment @ 4325400] [A1 completion @ 4326344] [P2 arrival @ 4334400] [P3 arrival @ 4344000] [P4 arrival @ 4363200] [P5 arrival @ 4374000] [P6 arrival @ 4387500] [P7 arrival @ 4392000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 116053 Exec = 4203642 Now = 4320147
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: DSS, load 28%, mean IAT 5400, and periodic load 69% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4320147] [P1 completion @ 4320600] [A1 replenishment @ 4322739] [P1 arrival @ 4325400] [P2 arrival @ 4334400] [P3 arrival @ 4344000] [P4 arrival @ 4363200] [P5 arrival @ 4374000] [P6 arrival @ 4387500] [P7 arrival @ 4392000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 114379 Exec = 4203642 Now = 4320147
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: BGS, load 1%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3326386] [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 1%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 replenishment @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [A1 arrival @ 3415542] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 1%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3326386] [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 2%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [A1 arrival @ 3332771] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 2%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 replenishment @ 3402000] [A1 arrival @ 3405744] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 2%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [A1 arrival @ 3332771] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 3%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [A1 arrival @ 3331668] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: PLS, load 3%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3396600] [A1 replenishment @ 3396600] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3408411] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 3%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3326400] [P2 arrival @ 3326400] [P3 arrival @ 3326400] [P5 arrival @ 3326400] [P4 arrival @ 3330000] [P8 arrival @ 3330000] [A1 arrival @ 3331668] [P6 arrival @ 3348000] [P9 arrival @ 3348000] [P7 arrival @ 3360000] [P10 arrival @ 3360000]
+>>>> testing server with policy: BGS, load 4%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3408411] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: PLS, load 4%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 replenishment @ 3402000] [A1 arrival @ 3408411] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 4%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3408411] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: BGS, load 5%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3399290] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: PLS, load 5%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3399290] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 replenishment @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 5%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3399290] [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: BGS, load 6%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3403425] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: PLS, load 6%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 replenishment @ 3402000] [A1 arrival @ 3403425] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: DSS, load 6%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3403425] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: BGS, load 7%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3403425] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: PLS, load 7%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P4 arrival @ 3660000] [P7 arrival @ 3660000] [P1 arrival @ 3661200] [P2 arrival @ 3661200] [A1 replenishment @ 3661200] [A1 arrival @ 3664493] [P3 arrival @ 3672000] [P5 arrival @ 3672000] [P6 arrival @ 3672000] [P9 arrival @ 3672000] [P8 arrival @ 3690000] [P10 arrival @ 3720000]
+>>>> testing server with policy: DSS, load 7%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3403425] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: BGS, load 8%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3403425] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: PLS, load 8%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P4 arrival @ 3660000] [P7 arrival @ 3660000] [P1 arrival @ 3661200] [P2 arrival @ 3661200] [A1 replenishment @ 3661200] [A1 arrival @ 3664493] [P3 arrival @ 3672000] [P5 arrival @ 3672000] [P6 arrival @ 3672000] [P9 arrival @ 3672000] [P8 arrival @ 3690000] [P10 arrival @ 3720000]
+>>>> testing server with policy: DSS, load 8%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3402000] [P2 arrival @ 3402000] [P6 arrival @ 3402000] [A1 arrival @ 3403425] [P3 arrival @ 3412800] [P5 arrival @ 3412800] [P4 arrival @ 3420000] [P7 arrival @ 3420000] [P8 arrival @ 3420000] [P9 arrival @ 3456000] [P10 arrival @ 3480000]
+>>>> testing server with policy: BGS, load 9%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P4 arrival @ 3450000] [P1 arrival @ 3450600] [A1 arrival @ 3454253] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 9%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3780000] [P2 arrival @ 3780000] [P3 arrival @ 3780000] [P4 arrival @ 3780000] [P6 arrival @ 3780000] [P7 arrival @ 3780000] [P8 arrival @ 3780000] [P9 arrival @ 3780000] [A1 replenishment @ 3780000] [A1 arrival @ 3786599] [P5 arrival @ 3801600] [P10 arrival @ 3840000]
+>>>> testing server with policy: DSS, load 9%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P4 arrival @ 3660000] [P7 arrival @ 3660000] [P1 arrival @ 3661200] [P2 arrival @ 3661200] [A1 arrival @ 3664493] [P3 arrival @ 3672000] [P5 arrival @ 3672000] [P6 arrival @ 3672000] [P9 arrival @ 3672000] [P8 arrival @ 3690000] [P10 arrival @ 3720000]
+>>>> testing server with policy: BGS, load 10%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [A1 arrival @ 3454253] [P1 arrival @ 3456000] [P2 arrival @ 3456000] [P3 arrival @ 3456000] [P5 arrival @ 3456000] [P6 arrival @ 3456000] [P9 arrival @ 3456000] [P4 arrival @ 3480000] [P7 arrival @ 3480000] [P10 arrival @ 3480000] [P8 arrival @ 3510000]
+>>>> testing server with policy: PLS, load 10%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3780000] [P2 arrival @ 3780000] [P3 arrival @ 3780000] [P4 arrival @ 3780000] [P6 arrival @ 3780000] [P7 arrival @ 3780000] [P8 arrival @ 3780000] [P9 arrival @ 3780000] [A1 replenishment @ 3780000] [A1 arrival @ 3786599] [P5 arrival @ 3801600] [P10 arrival @ 3840000]
+>>>> testing server with policy: DSS, load 10%, mean IAT 5400, and periodic load 88% <<<<
+stopping simulation
+simulator: normal completion
+ [P1 arrival @ 3780000] [P2 arrival @ 3780000] [P3 arrival @ 3780000] [P4 arrival @ 3780000] [P6 arrival @ 3780000] [P7 arrival @ 3780000] [P8 arrival @ 3780000] [P9 arrival @ 3780000] [A1 arrival @ 3786599] [P5 arrival @ 3801600] [P10 arrival @ 3840000]
+>>>> testing server with policy: BGS, load 11%, mean IAT 5400, and periodic load 88% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4320147] [P1 completion @ 4320300] [P1 arrival @ 4325400] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4350000] [P5 arrival @ 4363200] [P6 arrival @ 4374000] [P7 arrival @ 4380000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 31743 Exec = 4287992 Now = 4320147
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: PLS, load 11%, mean IAT 5400, and periodic load 88% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4320147] [A1 budget_exhaustion @ 4320648] [A1 completion @ 4321380] [P1 arrival @ 4325400] [A1 replenishment @ 4325400] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4350000] [P5 arrival @ 4363200] [P6 arrival @ 4374000] [P7 arrival @ 4380000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 34100 Exec = 4284960 Now = 4320147
+reoprt : time inconsistency -- probable overload
+>>>> testing server with policy: DSS, load 11%, mean IAT 5400, and periodic load 88% <<<<
+simulator: past latest stop time
+simulator: abnormal completion (see log file for details)
+ [A1 arrival @ 4320147] [P1 completion @ 4320300] [A1 replenishment @ 4323697] [P1 arrival @ 4325400] [P2 arrival @ 4330800] [P3 arrival @ 4341600] [P4 arrival @ 4350000] [P5 arrival @ 4363200] [P6 arrival @ 4374000] [P7 arrival @ 4380000] [P8 arrival @ 4410000] [P9 arrival @ 4428000] [P10 arrival @ 4440000]
+Idle + Exec /= Now
+ Idle = 33452 Exec = 4284960 Now = 4320147
+reoprt : time inconsistency -- probable overload
