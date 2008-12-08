@@ -6,7 +6,7 @@ package Error_Log is
    procedure Open (Prefix : String := "default");
    procedure Close;
    --  idempotent, opens or creates logfile Prefix & ".errors"
-   Debug_Level : Integer := 0; --  default is no debugging output
+   Debug_Level : Integer := 10; --  default is no debugging output
    procedure Debug
      (Threshold : Integer;
       Msg : String);

@@ -5,6 +5,7 @@
 with Aperiodic_Server_Parameters; use Aperiodic_Server_Parameters;
 with Threads.Aperiodic_Policies;
 with Tasks;
+
 package Threads.Sched_TBS is
 
    type Object is new
@@ -23,16 +24,19 @@ package Threads.Sched_TBS is
    procedure Go
      (P : in out Object);
    procedure Stop
-     (P : in out Object);
+    (P : in out Object);
    procedure New_Job
      (P : in out Object;
       J : in Jobs.Job);
-   procedure Idle
-     (P : in out Object);
+--   procedure Idle
+--     (P : in out Object);
 
 private
 
---   package Job_Completion_Events 
+--   package Job_Completion_Events is 
+--	type Object is new Events.Object with record
+--	  T : Thread_Ref;
+--	end record;
 --	procedure Handler (E : in out Object);
 --   end Job_Completion_Events;
 
@@ -46,8 +50,19 @@ private
    type Object is new
      Threads.Aperiodic_Policies.Object with record
         Parms : Aperiodic_Server_Parameters.Parameters;
-	Current_Job : Jobs.Job;
-	Utilization : Float;
+	Server_Utilization : Float;
+
+--	Completion : aliased Job_Completion_Events.Object;
+--	Periodic_Utilization : Float;
+
+-- 	precedure Calc_Utilization(U : in out Float);
+--	procedure Calc_Periodic_Utilization;
+
+--	procedure Calc_Periodic_Utilization_Queue is new Task_Queues.For_All (Calc_Utilization);
+--	procedure Calc_Periodic_Utilization is
+--	begin
+--	  Calc_Periodic_Utilization_Queue (All_Tasks);
+--	end Calc_Periodic_Utilization;
    end record;
 
 

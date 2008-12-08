@@ -54,7 +54,6 @@ package body Threads.Sched_TBS is
    end Trace_Priority;
 
  
-
    ----------
    --  Go  --
    ----------
@@ -68,7 +67,7 @@ package body Threads.Sched_TBS is
      (P : in out Object) is
       Now : Time := Simulator.Current_Time;
    begin
---      pragma Debug (Trace (9, P, "go handler (pls)"));
+      pragma Debug (Trace (9, P, "go handler (pls)"));
       Now := Simulator.Current_Time;
       --  Schedule a timer for when the current replenishment
       --  chunk will run out, assuming the thread runs that long.
@@ -95,7 +94,7 @@ package body Threads.Sched_TBS is
      (P : in out Object) is
       Now : Time := Simulator.Current_Time;
    begin
---      pragma Debug (Trace (9, P, "stop handler (pls)"));
+      pragma Debug (Trace (9, P, "stop handler (pls)"));
       Now := Simulator.Current_Time;
       --  Cancel budget timeout, since this task is no longer running.
 
@@ -115,6 +114,7 @@ package body Threads.Sched_TBS is
       Parms : Aperiodic_Server_Parameters.Parameters) is
    begin
       P.Parms := Parms;
+      p.Server_Utilization := Float (Float (P.Parms.Budget) / Float (P.Parms.Budget_Interval));
       pragma Assert (Parms.Budget < Parms.Budget_Interval);
    end Bind_Parms;
 
@@ -126,6 +126,7 @@ package body Threads.Sched_TBS is
      (P : in out Object) is
    begin
       P.T.Priority :=  Time'Last;
+--      P.Completion.T := P.T;
       P.T.Is_In_Ready_Queue := False;
 --      Policy_Suspend (P.T);
    end Init;
@@ -138,12 +139,14 @@ package body Threads.Sched_TBS is
    --  a server, this means the server has no jobs in its queue.
 
    procedure Suspend (P : in out Object) is
+      Now : Time := Simulator.Current_Time;
    begin
---      pragma Debug (Trace (9, P, "suspend handler (pls)"));
+      pragma Debug (Trace (9, P, "suspend handler (pls)"));
+      Now := Simulator.Current_Time;
 
       --  Suspend the server until the next replenishment.
 --      Put("Chris: Suspend() called");
-	Put("");
+--	Put("");
 --      if not P.T.Is_Policy_Suspended then
 --         Policy_Suspend (P.T);
 --      end if;
@@ -161,27 +164,25 @@ package body Threads.Sched_TBS is
    procedure Unsuspend (P : in out Object) is
       Now : Time := Simulator.Current_Time;
    begin
+       pragma Debug (Trace_Priority (9, P, "unsuspend"));
       Now := Simulator.Current_Time;
 --      Put("Chris: Unsuspend() called");
-	Put("");
+--	Put("");
 --      if P.T.Priority = Time'Last then
 --         P.T.Priority := Simulator.Current_Time + P.Parms.Budget_Interval;
---         pragma Debug (Trace_Priority (5, P'Unchecked_Access, "unsuspend"));
 --           Put("Priority HUUUUUUGE");
 --      end if;
 
    end Unsuspend;
 
 -- Job arrives to empty server, set new deadline
-
+-- Job completes and new job is selected (new job is J), set new deadline
    procedure New_Job(P : in out Object; J : in Jobs.Job) is
-	Now : Time := Simulator.Current_time;
 	Max : Time;
    begin
 -- I would like to actually change J.Absolute_Deadline here
 -- but J is immutable (in but not out)
-	Now := Simulator.Current_time;
-      	P.T.Priority := J.Absolute_Deadline;
+--      	P.T.Priority := J.Absolute_Deadline;
 
 	if P.T.Priority = Time'Last then
 		Max := J.Arrival_time;
@@ -191,20 +192,31 @@ package body Threads.Sched_TBS is
 		Max := P.T.Priority;
 	end if;
 
-	-- replace 2 with (J.Execution_Time / Utilization of server)
-	P.T.Priority := Max + Time (J.Execution_Time * 2);
---	Put("Chris: New_Job() New prio ++ ");
---	Put("++ ");
+	-- Round down instead of - 1
+	-- Not sure how ADA casts an Integer to a Float.
+        pragma Debug(Trace_Priority (1, P, "New_Job"));	
+	P.T.Priority := Max + Time ( Float ( Float (J.Execution_Time) / P.Server_Utilization)) - 1;
 
+-- This is a bit tricky
+-- Since we updated the Tasks Priority we need to take it off the Schedulers Queue
+-- and put it back on to update the tasks location (priority) in the priority queue.
+-- Again, this is because the priority queue only looks at the priority of the task
+-- when the task is placed on the queue.  If this priority changes, which it does in
+-- this case, then we must take it off the queue and place it back on.
+	if not P.T.Is_Policy_Suspended then
+		Policy_Suspend(P.T);
+		Policy_Unsuspend(P.T);
+	end if;
+        pragma Debug(Trace_Priority (1, P, "New_Job"));
    end New_Job;
 
-   procedure Idle(P : in out Object) is
+--   procedure Idle(P : in out Object) is
 
-   begin
-	P.T.Priority := Time'Last;
---        Put("Chris: Idle() called");
+--   begin
+--	P.T.Priority := Time'Last;
+--        Put("");
 --	P.T.Priority := P.T.Priority;
-   end Idle;
+--   end Idle;
 
 --   package body Job_Completion_Events is
 	
@@ -212,6 +224,7 @@ package body Threads.Sched_TBS is
 --      	   Now : Time := Simulator.Current_Time;
 --	begin
 --      	   Now := Simulator.Current_Time;
+--	   Handler(Object (E.T));
 --	end Handler;
 
 --   end Job_Completion_Events;

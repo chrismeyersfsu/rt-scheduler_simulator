@@ -37,6 +37,15 @@ package body Threads is
       end if;
    end Trace_Context_Switch;
 
+   procedure Trace_Sched
+     (Msg : String) is
+   begin
+         Put (Log, Msg);
+         New_Line (Log);
+   end Trace_Sched;
+
+
+
    --  ordering relation for thread queues
 
    function ">" (L, R : Thread_Ref) return Boolean is
@@ -182,6 +191,8 @@ package body Threads is
       Now : constant Time := Simulator.Current_Time;
    begin
 
+      Trace_Sched("Entered Scheduler");
+
       pragma Assert (not Scheduler_Active);
       Scheduler_Active := True;
 
@@ -194,6 +205,7 @@ package body Threads is
       --  find highest priority thread
 
       if Ready_Queue.Is_Empty then
+          Trace_Sched("Scheduler -- going idle");
           --  idle system
           Top := Idle_Thread;
           --  this is an ideal time to terminate simulation
@@ -205,6 +217,7 @@ package body Threads is
       end if;
 
       if Top = Current then
+         Trace_Sched("Scheduler -- Chose the same Thread");
          pragma Debug (Trace_Context_Switch (5, Current, Top));
          Scheduler_Active := False;
          return;

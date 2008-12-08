@@ -61,9 +61,9 @@ begin
    --  scheduling policy object per aperiodic task
 
    Aperiodic_Load.Bind_Parms
-     ((Mean_Interarrival_Time => 3.0, Mean_Execution_Time => 2.0));
+     ((Mean_Interarrival_Time => 5.0, Mean_Execution_Time => 3.0));
    Aperiodic_Policy.Bind_Parms
-     ((Budget => 1, Budget_Interval => 2));
+     ((Budget => 3, Budget_Interval => 5));
    Tasks.Bind
      (Aperiodic_Task'Unchecked_Access,
       M => Aperiodic_Load'Unchecked_Access,
@@ -71,7 +71,7 @@ begin
       Name => "A1");
 
    Periodic_Load.Bind_Parms
-     ((Period => 4, Deadline => 4, WCET => 2));
+     ((Period => 5, Deadline => 4, WCET => 2));
    Tasks.Bind
      (Periodic_Task'Unchecked_Access,
       M => Periodic_Load'Unchecked_Access,
