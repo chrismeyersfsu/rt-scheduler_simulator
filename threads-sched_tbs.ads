@@ -17,53 +17,14 @@ package Threads.Sched_TBS is
    procedure Init
      (P : in out Object);
 
-   procedure Suspend
-     (P : in out Object);
-   procedure Unsuspend
-     (P : in out Object);
-   procedure Go
-     (P : in out Object);
-   procedure Stop
-    (P : in out Object);
    procedure New_Job
      (P : in out Object;
       J : in Jobs.Job);
---   procedure Idle
---     (P : in out Object);
 
 private
-
---   package Job_Completion_Events is 
---	type Object is new Events.Object with record
---	  T : Thread_Ref;
---	end record;
---	procedure Handler (E : in out Object);
---   end Job_Completion_Events;
-
---   package Job_Arrival_Events is
---	type Object is new Events.Object with record
---	  T : Thread_ref;
---	end record;
---	procedure Handler (E : in out Object);
---   end Job_Arrival_Events;
-
    type Object is new
      Threads.Aperiodic_Policies.Object with record
         Parms : Aperiodic_Server_Parameters.Parameters;
 	Server_Utilization : Float;
-
---	Completion : aliased Job_Completion_Events.Object;
---	Periodic_Utilization : Float;
-
--- 	precedure Calc_Utilization(U : in out Float);
---	procedure Calc_Periodic_Utilization;
-
---	procedure Calc_Periodic_Utilization_Queue is new Task_Queues.For_All (Calc_Utilization);
---	procedure Calc_Periodic_Utilization is
---	begin
---	  Calc_Periodic_Utilization_Queue (All_Tasks);
---	end Calc_Periodic_Utilization;
    end record;
-
-
 end Threads.Sched_TBS;

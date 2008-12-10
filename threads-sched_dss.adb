@@ -248,7 +248,7 @@ package body Threads.Sched_DSS is
          pragma Assert (P.R_Queue.Front_Of.R_Time = Now);
          --  Update the thread's priority (deadline) and
          --  let it contend for the processor.
-         P.T.Priority := Now + P.Parms.Budget_Interval;
+         Change_Priority (P.T, Now + P.Parms.Budget_Interval);
          pragma Debug (Trace_Priority (5, P, "replenishment handler"));
          Policy_Unsuspend (E.T);
          Schedule;
@@ -256,7 +256,7 @@ package body Threads.Sched_DSS is
 
       function Name (E : Object) return String is
       begin
-         return Name (E.T.all) & "replenishment " & Events.Object (E).Name;
+         return E.T.all.Name & "replenishment " & Events.Object (E).Name;
       end Name;
 
    end Replenishment_Events;
@@ -316,7 +316,7 @@ package body Threads.Sched_DSS is
                --  Update thread deadline to match new chunk.
                --  Since this can only be later, it cannot alter
                --  a decision to preempt this thread.
-               P.T.Priority := R.R_Time + P.Parms.Budget_Interval;
+               Change_Priority (P.T, R.R_Time + P.Parms.Budget_Interval);
                pragma Debug (Trace (7, P, "starting new budget chunk"));
                pragma Debug (Trace_Priority (5, P, Msg));
             else
@@ -495,7 +495,7 @@ package body Threads.Sched_DSS is
       elsif DS <= DC then
          DS := Time'Min (DC, TD);
       end if;
-      P.T.Priority := DS;
+      Change_Priority (P.T, DS);
       pragma Debug (Trace_Priority (5, P'Unchecked_Access, "new_current_thread"));
    end New_Current_Thread;
 
@@ -511,7 +511,7 @@ package body Threads.Sched_DSS is
    begin
 
       if P.T.Priority = Time'Last then
-         P.T.Priority := Simulator.Current_Time + P.Parms.Budget_Interval;
+         Change_Priority (P.T, Simulator.Current_Time + P.Parms.Budget_Interval);
          pragma Debug (Trace_Priority (5, P'Unchecked_Access, "unsuspend"));
       end if;
 

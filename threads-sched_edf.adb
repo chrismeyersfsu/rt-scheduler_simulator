@@ -1,4 +1,4 @@
---  $Id: threads-sched_edf.adb,v 1.2 2008/11/23 01:54:28 baker Exp $
+--  $Id: threads-sched_edf.adb,v 1.2 2008/11/23 01:54:28 baker Exp baker $
 
 --  EDF scheduler
 
@@ -35,7 +35,7 @@ package body Threads.Sched_EDF is
       J : in Jobs.Job) is
    begin
       P.Current_Job := J;
-      P.T.Priority := J.Absolute_Deadline;
+      Change_Priority (P.T, J.Absolute_Deadline);
    end New_Job;
 
 end Threads.Sched_EDF;

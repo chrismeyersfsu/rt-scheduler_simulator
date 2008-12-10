@@ -77,7 +77,7 @@ package body Threads.Sched_PLS is
          if not P.T.Is_Suspended then
             --  Update the thread's priority (deadline) and
             --  let it contend for the processor.
-            P.T.Priority := Now + P.Parms.Budget_Interval;
+            Change_Priority (P.T, Now + P.Parms.Budget_Interval);
             pragma Debug (Trace_Priority (5, P.all, "replenishment handler"));
             --  Do the replenishment.
             P.Usage := 0;

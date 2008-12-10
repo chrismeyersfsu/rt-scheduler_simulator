@@ -250,6 +250,14 @@ private
 
    All_Threads : Threads_Queues.Object;
 
+
+   --  The following is for changing the priority of a thread.
+   --  It may need to dequeue and re-enqueue the thread at the
+   --  new priority.
+
+   procedure Change_Priority (T : Thread_Ref;
+                              Priority : Time);
+
    --  The following are for the use of policies that need to
    --  prevent a thread from running, because it is out of budget,
    --  without actually suspending it.
@@ -257,6 +265,7 @@ private
    procedure Policy_Suspend (T : Thread_Ref);
    procedure Policy_Unsuspend  -- use this one
      (T : Thread_Ref);
+
    procedure Policy_Unsuspend  -- obsolete
      (T : Thread_Ref;
       New_Priority : Time);
