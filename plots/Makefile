@@ -1,4 +1,4 @@
 default:
 	./doplots
 clean:
-	rm -f *.pts *.ps *.dvi *.aux *~ *#
+	rm -f EDF*.tex *.pts *.ps *.dvi *.aux *~ *#

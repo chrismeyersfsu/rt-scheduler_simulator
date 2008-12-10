@@ -35,6 +35,7 @@ with Threads.Sched_BGS;
 with Threads.Sched_PLS;
 with Threads.Sched_TBS;
 with Threads.Sched_DSS;
+with Threads.Sched_BIS;
 with Virtual_Times; use Virtual_Times;
 with Workload_Models;
 
@@ -50,6 +51,7 @@ procedure Test_Four is
    BGS_Policy : aliased Threads.Sched_BGS.Object;
    PLS_Policy : aliased Threads.Sched_PLS.Object;
    DSS_Policy : aliased Threads.Sched_DSS.Object;
+   BIS_Policy : aliased Threads.Sched_BIS.Object;
 
    -- Comment out the scheduler that you don't want to run
    Aperiodic_Policies : array (Servers)
@@ -61,7 +63,7 @@ procedure Test_Four is
       DDS => null,
       DXS => null,
       CUS => null,
-      BIS => null,
+      BIS => BIS_Policy'Unchecked_Access,
       others => null);
 
    -- You must comment it out here as well
@@ -75,7 +77,7 @@ procedure Test_Four is
       DDS => null,
       DXS => null,
       CUS => null,
-      BIS => null,
+      BIS => BIS_Policy'Unchecked_Access,
       others => null);
 
    --  Periodic tasks

@@ -107,11 +107,12 @@ package Sizes is
 --  type Servers is (BGS);
   --  BGS = Background Server
   --  PLS = Polling Server
-  --  DDS = Deferrable Server
   --  DSS = Sporadic Server
-  --  DDS = ???
-  --  DXS = Exchange Server
   --  TBS = Total Bandwidth Server
+  --  DDS = Deadline Deferrable Server
+  --  DXS = Exchange Server
+  --  CUS = Constant Utilization Server
+  --  BIS = Baker Ideal Server
   --  We abuse these names for both deadline and fixed-task-priority
   --  variants of the algorithms, in different applications.
 
@@ -126,7 +127,7 @@ package Sizes is
   RM_Size: constant Server_Size_Table:=
   ((BGS | PLS | TBS | CUS | BIS | DSS => 3160, DDS => 3181, DXS => 3093),
    (BGS | PLS | TBS | CUS | BIS | DSS => 1109, DDS => 1081, DXS => 1085),
-   (BGS | PLS | TBS | CUS | BIS |DSS =>  125, DDS =>  117, DXS =>  117));
+   (BGS | PLS | TBS | CUS | BIS | DSS =>  125, DDS =>  117, DXS =>  117));
 --   ((BGS => 3160),
 --    (BGS => 1109),
 --    (BGS => 125));
