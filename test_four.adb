@@ -55,11 +55,13 @@ procedure Test_Four is
    Aperiodic_Policies : array (Servers)
      of aliased Threads.Aperiodic_Policies.Class_Ref :=
      (BGS => BGS_Policy'Unchecked_Access,
---      PLS => PLS_Policy'Unchecked_Access,
+      PLS => PLS_Policy'Unchecked_Access,
       DSS => DSS_Policy'Unchecked_Access,
---      TBS => TBS_Policy'Unchecked_Access,
+      TBS => TBS_Policy'Unchecked_Access,
       DDS => null,
       DXS => null,
+      CUS => null,
+      BIS => null,
       others => null);
 
    -- You must comment it out here as well
@@ -67,11 +69,13 @@ procedure Test_Four is
    Thread_Policies : array (Servers)
      of aliased Threads.Policies_Class_Ref :=
      (BGS => BGS_Policy'Unchecked_Access,
---      PLS => PLS_Policy'Unchecked_Access,
+      PLS => PLS_Policy'Unchecked_Access,
       DSS => DSS_Policy'Unchecked_Access,
---      TBS => TBS_Policy'Unchecked_Access,
+      TBS => TBS_Policy'Unchecked_Access,
       DDS => null,
       DXS => null,
+      CUS => null,
+      BIS => null,
       others => null);
 
    --  Periodic tasks
@@ -98,7 +102,7 @@ begin
       for R in Runs loop
          Report.Start_Plot (I, R);
          for L in Loads loop
-            for S in BGS .. DXS loop
+            for S in Servers loop
                if Aperiodic_Policies (S) /= null then
                   Trace (1, ">>>> testing server with policy: "
                            & Servers'Image (S)

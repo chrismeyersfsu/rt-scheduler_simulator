@@ -103,7 +103,7 @@ package Sizes is
 
   -- Order is very important
 
-  type Servers is (BGS, PLS, DSS, TBS, DDS, DXS);
+  type Servers is (BGS, PLS, DSS, TBS, DDS, DXS, CUS, BIS);
 --  type Servers is (BGS);
   --  BGS = Background Server
   --  PLS = Polling Server
@@ -124,9 +124,9 @@ package Sizes is
   --  analyses for these are different.
 
   RM_Size: constant Server_Size_Table:=
-  ((BGS | PLS | TBS | DSS => 3160, DDS => 3181, DXS => 3093),
-   (BGS | PLS | TBS | DSS => 1109, DDS => 1081, DXS => 1085),
-   (BGS | PLS | TBS | DSS =>  125, DDS =>  117, DXS =>  117));
+  ((BGS | PLS | TBS | CUS | BIS | DSS => 3160, DDS => 3181, DXS => 3093),
+   (BGS | PLS | TBS | CUS | BIS | DSS => 1109, DDS => 1081, DXS => 1085),
+   (BGS | PLS | TBS | CUS | BIS |DSS =>  125, DDS =>  117, DXS =>  117));
 --   ((BGS => 3160),
 --    (BGS => 1109),
 --    (BGS => 125));
@@ -136,9 +136,9 @@ package Sizes is
   --  of servers.
 
   EDF_Size: constant Server_Size_Table:=
-  ((BGS | PLS | DSS | TBS | DXS => 3240, DDS => 3181),
-   (BGS | PLS | DSS | TBS | DXS => 1674, DDS => 1622),
-   (BGS | PLS | DSS | TBS | DXS =>  648, DDS => 623));
+  ((BGS | PLS | DSS | TBS | CUS | BIS | DXS => 3240, DDS => 3181),
+   (BGS | PLS | DSS | TBS | CUS | BIS | DXS => 1674, DDS => 1622),
+   (BGS | PLS | DSS | TBS | CUS | BIS |DXS =>  648, DDS => 623));
 --   ((BGS => 3240),
 --    (BGS => 1674),
 --    (BGS => 648));
