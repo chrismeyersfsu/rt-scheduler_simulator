@@ -48,7 +48,7 @@ package body Threads.Sched_TBS is
 		Max := P.T.Priority;
 	end if;
 
-	Priority_New := Max + Time (Float'Floor ( Float ( Float (J.Execution_Time) / P.Server_Utilization) ) );
+	Priority_New := Max + Time (Float'Ceiling ( Float ( Float (J.Execution_Time) / P.Server_Utilization) ) );
 
 	Change_Priority(P.T, Priority_New);
 
