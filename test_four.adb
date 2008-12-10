@@ -33,6 +33,7 @@ with Threads.Aperiodic_Policies; use Threads.Aperiodic_Policies;
 with Threads.Sched_EDF; use Threads.Sched_EDF;
 with Threads.Sched_BGS;
 with Threads.Sched_PLS;
+with Threads.Sched_TBS;
 with Threads.Sched_DSS;
 with Virtual_Times; use Virtual_Times;
 with Workload_Models;
@@ -45,22 +46,32 @@ procedure Test_Four is
 
    Aperiodic_Work : aliased Aperiodic_Workloads.Object;
 
-   DSS_Policy : aliased Threads.Sched_DSS.Object;
+   TBS_Policy : aliased Threads.Sched_TBS.Object;
    BGS_Policy : aliased Threads.Sched_BGS.Object;
    PLS_Policy : aliased Threads.Sched_PLS.Object;
+   DSS_Policy : aliased Threads.Sched_DSS.Object;
 
+   -- Comment out the scheduler that you don't want to run
    Aperiodic_Policies : array (Servers)
      of aliased Threads.Aperiodic_Policies.Class_Ref :=
-     (DSS => DSS_Policy'Unchecked_Access,
-      BGS => BGS_Policy'Unchecked_Access,
-      PLS => PLS_Policy'Unchecked_Access,
+     (BGS => BGS_Policy'Unchecked_Access,
+--      PLS => PLS_Policy'Unchecked_Access,
+      DSS => DSS_Policy'Unchecked_Access,
+--      TBS => TBS_Policy'Unchecked_Access,
+      DDS => null,
+      DXS => null,
       others => null);
 
+   -- You must comment it out here as well
+   -- Comment out the scheduler that you don't want to run
    Thread_Policies : array (Servers)
      of aliased Threads.Policies_Class_Ref :=
-     (DSS => DSS_Policy'Unchecked_Access,
-      BGS => BGS_Policy'Unchecked_Access,
-      PLS => PLS_Policy'Unchecked_Access,
+     (BGS => BGS_Policy'Unchecked_Access,
+--      PLS => PLS_Policy'Unchecked_Access,
+      DSS => DSS_Policy'Unchecked_Access,
+--      TBS => TBS_Policy'Unchecked_Access,
+      DDS => null,
+      DXS => null,
       others => null);
 
    --  Periodic tasks
@@ -87,7 +98,7 @@ begin
       for R in Runs loop
          Report.Start_Plot (I, R);
          for L in Loads loop
-            for S in BGS .. DSS loop
+            for S in BGS .. DXS loop
                if Aperiodic_Policies (S) /= null then
                   Trace (1, ">>>> testing server with policy: "
                            & Servers'Image (S)

@@ -61,13 +61,15 @@ package body Report is
    Tex : File_Type;
    Plot : File_Type;
    Prefix : String := "EDF";
+   Directory : String := "plots";
 
    procedure New_IAT is
       --  re-initialize all tables
    begin
       for R in Runs loop
          for L in Loads loop
-            for S in BGS .. DSS loop
+--            for S in BGS .. DXS loop
+            for S in Servers loop
                Exec (S)(R)(L) := 0;
                Missed (S)(R)(L) := 0;
                Comptd (S)(R)(L) := 0;
@@ -163,7 +165,7 @@ package body Report is
      (I : IATS;
       R : Runs) is
       Filename_Root : constant String :=
-        Plot_File_Name (R, I);
+        Directory & "/" & Plot_File_Name (R, I);
    begin
       --  open or create the Plot output file
       begin
@@ -190,7 +192,8 @@ package body Report is
       M : Float) is
       -- check for average response times that are better than M/M/1
    begin
-      for S in BGS .. DSS loop
+--      for S in BGS .. DXS loop
+      for S in Servers loop
          if Avg (S)(R)(L) < M then
             Put (Log, Plot_File_Name (R, I));
             Put (Log, " at utilization ");
@@ -223,16 +226,12 @@ package body Report is
       Validate_Plot_Line (I, R, L, M);
       pragma Assert (AL > 0.0);
       put_Plot (AL);                                  -- 1
-      put_Plot (Avg (Sizes.BGS)(R)(L));               -- 2
-      put_Plot (Avg (Sizes.PLS)(R)(L));               -- 3
-      pragma Assert (Avg (Sizes.DSS)(R)(L) >= 0.0);
-      put_Plot (Avg (Sizes.DSS)(R)(L));               -- 4
-      pragma Assert (M > 0.0);
-      put_Plot (M);                                   -- 6
-      --  put_Plot (Avg (Sizes.DDS)(R)(L));           -- 7
-      --  put_Plot (Avg (Sizes.DXS)(R)(L));            -- 8
-      new_line (Plot);
+--      for S in BGS .. DXS loop
+      for S in Servers loop
+	put_Plot (Avg (Sizes.Servers(S))(R)(L));
+      end loop;
 
+      new_line (Plot);
    end Put_Plot;
 
    procedure Finish_Plot is
@@ -248,7 +247,7 @@ package body Report is
    procedure Start_Tex
      (I : IATS) is
       Filename_Root : constant String :=
-        Tex_File_Name (I);
+        Directory & "/" & Tex_File_Name (I);
    begin
       --  open or create the LaTeX output file
       begin
@@ -260,7 +259,8 @@ package body Report is
       put_line (Tex, "\begin{table}\begin{center}");
       put_line (Tex, "\begin{tabular}{ccr@{}rr@{}rr@{}rr@{}rr@{}r}");
       put_line (Tex, "periodic&aperiodic");
-      for S in BGS .. DSS loop
+--      for S in BGS .. DXS loop
+      for S in Servers loop
          --  ??? suppress output for unused polices?
          Put (Tex, "&\twocol{" & Servers'Image (S) & "}");
       end loop;
@@ -294,7 +294,8 @@ package body Report is
        put (Tex, " & ");
        --  average aperiodic server utlization level for this run
        put (Tex, Util (Sizes.BGS)(R)(L), 1, 2, 0);
-       for S in BGS .. DSS loop
+--       for S in BGS .. DXS loop
+       for S in Servers loop
           --  for each server size
           --  put out the results of the experiment
           Put_Tex (S, R, L);

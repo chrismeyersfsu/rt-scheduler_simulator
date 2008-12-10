@@ -4,8 +4,6 @@
 
 with Aperiodic_Server_Parameters; use Aperiodic_Server_Parameters;
 with Threads.Aperiodic_Policies;
-with Tasks;
-
 package Threads.Sched_TBS is
 
    type Object is new

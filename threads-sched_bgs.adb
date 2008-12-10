@@ -24,7 +24,7 @@ package body Threads.Sched_BGS is
    procedure Init
      (P : in out Object) is
    begin
-      P.T.Priority :=  Time'Last - 1;
+      Change_Priority(P.T, Time'Last - 1);
    end Init;
 
 end Threads.Sched_BGS;

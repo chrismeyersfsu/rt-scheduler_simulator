@@ -9,50 +9,6 @@ package body Threads.Sched_TBS is
 
    type Policy_Ref is access all Object;
 
-   --  Debugging Support
-
-   procedure Trace
-     (Threshold : Integer;
-      P : in Object;
-      Msg : String) is
-   begin
-      if Debug_Level >= Threshold then
-         Put (Log, Name (P.T.all));
-         Put (Log, Msg);
-         New_Line (Log);
-      end if;
-   end Trace;
-
-   procedure Trace_Time
-     (Threshold : Integer;
-      P : in Object;
-      Msg : String;
-      T : Time) is
-   begin
-      if Debug_Level >= Threshold then
-         Put (Log, Name (P.T.all));
-         Put (Log, Msg);
-         Put (Log, " at");
-         Put (Log, Time'Image (T));
-         New_Line (Log);
-      end if;
-   end Trace_Time;
-
-   procedure Trace_Priority
-     (Threshold : Integer;
-      P : in Object;
-      Msg : String) is
-   begin
-      if Debug_Level >= Threshold then
-         Put (Log, Name (P.T.all));
-         Put (Log, "priority ->");
-         Put (Log, Time'Image (P.T.Priority));
-         Put (Log, " in ");
-         Put (Log, Msg);
-         New_Line (Log);
-      end if;
-   end Trace_Priority;
-
    ------------------
    --  Bind_Parms  --
    ------------------
@@ -62,7 +18,7 @@ package body Threads.Sched_TBS is
       Parms : Aperiodic_Server_Parameters.Parameters) is
    begin
       P.Parms := Parms;
-      p.Server_Utilization := Float (Float (P.Parms.Budget) / Float (P.Parms.Budget_Interval));
+      P.Server_Utilization := Float (Float (P.Parms.Budget) / Float (P.Parms.Budget_Interval));
       pragma Assert (Parms.Budget < Parms.Budget_Interval);
    end Bind_Parms;
 
@@ -92,10 +48,11 @@ package body Threads.Sched_TBS is
 		Max := P.T.Priority;
 	end if;
 
---        pragma Debug(Trace_Priority (1, P, "New_Job"));	
 	Priority_New := Max + Time (Float'Floor ( Float ( Float (J.Execution_Time) / P.Server_Utilization) ) );
+
 	Change_Priority(P.T, Priority_New);
 
-        pragma Debug(Trace_Priority (1, P, "New_Job"));
    end New_Job;
 end Threads.Sched_TBS;
+
+

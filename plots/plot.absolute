@@ -10,6 +10,7 @@ set output "EDFAA.ps"
 plot "EDFAA.pts" using 1:2 title "EDF background" with linesp 1 2,\
      "EDFAA.pts" using 1:3 title "EDF polling" with linesp 1 3,\
      "EDFAA.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     "EDFAA.pts" using 1:5 title "EDF total bandwidth server" with linesp 1 5,\
      ((1800.0*x)/(0.6-x)) title "M/M/0.6" with lines 4,\
      ((1800.0*x)/(1.0-x)) title "M/M/1" with lines 3
 set xrange [0:0.3]
@@ -17,6 +18,7 @@ set output "EDFBA.ps"
 plot "EDFBA.pts" using 1:2 title "EDF background" with linesp 1 2,\
      "EDFBA.pts" using 1:3 title "EDF polling" with linesp 1 3,\
      "EDFBA.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     "EDFBA.pts" using 1:5 title "EDF total bandwidth server" with linesp 1 5,\
      ((1800.0*x)/(0.31-x)) title "M/M/0.31" with lines 4,\
      ((1800.0*x)/(1.0-x)) title "M/M/1" with lines 3
 set xrange [0:0.12]
@@ -24,6 +26,7 @@ set output "EDFCA.ps"
 plot "EDFCA.pts" using 1:2 title "EDF background" with linesp 1 2,\
      "EDFCA.pts" using 1:3 title "EDF polling" with linesp 1 3,\
      "EDFCA.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     "EDFCA.pts" using 1:5 title "EDF total bandwidth server" with linesp 1 5,\
      ((1800.0*x)/(0.12-x)) title "M/M/0.12" with lines 4,\
      ((1800.0*x)/(1.0-x)) title "M/M/1" with lines 3
 set xrange [0:0.6]
@@ -31,6 +34,7 @@ set output "EDFAB.ps"
 plot "EDFAB.pts" using 1:2 title "EDF background" with linesp 1 2,\
      "EDFAB.pts" using 1:3 title "EDF polling" with linesp 1 3,\
      "EDFAB.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     "EDFAB.pts" using 1:5 title "EDF total bandwidth server" with linesp 1 5,\
      ((3600.0*x)/(0.6-x)) title "M/M/0.6" with lines 4,\
      ((3600.0*x)/(1.0-x)) title "M/M/1" with lines 3
 set xrange [0:0.3]
@@ -38,6 +42,7 @@ set output "EDFBB.ps"
 plot "EDFBB.pts" using 1:2 title "EDF background" with linesp 1 2,\
      "EDFBB.pts" using 1:3 title "EDF polling" with linesp 1 3,\
      "EDFBB.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     "EDFBB.pts" using 1:5 title "EDF total bandwidth server" with linesp 1 5,\
      ((3600.0*x)/(0.31-x)) title "M/M/0.31" with lines 4,\
      ((3600.0*x)/(1.0-x)) title "M/M/1" with lines 3
 set xrange [0:0.12]
@@ -45,6 +50,7 @@ set output "EDFCB.ps"
 plot "EDFCB.pts" using 1:2 title "EDF background" with linesp 1 2,\
      "EDFCB.pts" using 1:3 title "EDF polling" with linesp 1 3,\
      "EDFCB.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     "EDFCB.pts" using 1:5 title "EDF total bandwidth server" with linesp 1 5,\
      ((3600.0*x)/(0.12-x)) title "M/M/0.12" with lines 4,\
      ((3600.0*x)/(1.0-x)) title "M/M/1" with lines 3
 set xrange [0:0.6]
@@ -52,6 +58,7 @@ set output "EDFAC.ps"
 plot "EDFAC.pts" using 1:2 title "EDF background" with linesp 1 2,\
      "EDFAC.pts" using 1:3 title "EDF polling" with linesp 1 3,\
      "EDFAC.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     "EDFAC.pts" using 1:5 title "EDF total bandwidth server" with linesp 1 5,\
      ((5400.0*x)/(0.6-x)) title "M/M/0.6" with lines 4,\
      ((5400.0*x)/(1.0-x)) title "M/M/1" with lines 3
 set xrange [0:0.3]
@@ -59,6 +66,7 @@ set output "EDFBC.ps"
 plot "EDFBC.pts" using 1:2 title "EDF background" with linesp 1 2,\
      "EDFBC.pts" using 1:3 title "EDF polling" with linesp 1 3,\
      "EDFBC.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     "EDFBC.pts" using 1:5 title "EDF total bandwidth server" with linesp 1 5,\
      ((5400.0*x)/(0.31-x)) title "M/M/0.31" with lines 4,\
      ((5400.0*x)/(1.0-x)) title "M/M/1" with lines 3
 set xrange [0:0.12]
@@ -66,5 +74,6 @@ set output "EDFCC.ps"
 plot "EDFCC.pts" using 1:2 title "EDF background" with linesp 1 2,\
      "EDFCC.pts" using 1:3 title "EDF polling" with linesp 1 3,\
      "EDFCC.pts" using 1:4 title "EDF sporadic server" with linesp 1 4,\
+     "EDFCC.pts" using 1:5 title "EDF total bandwidth server" with linesp 1 5,\
      ((5400.0*x)/(0.12-x)) title "M/M/0.12" with lines 4,\
      ((5400.0*x)/(1.0-x)) title "M/M/1" with lines 3

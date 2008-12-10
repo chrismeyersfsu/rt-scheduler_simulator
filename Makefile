@@ -1,7 +1,7 @@
 # $Id: Makefile,v 1.1 2008/11/23 02:02:56 baker Exp baker $
 .PHONY : clean all archive plots save data
 PATH := /usr/local/ada-4.3/bin:${PATH}
-PROGRAMS=test_one test_two test_three test_zero test_four test_five test_six test_tbs test_bgs test_bgs_ap test_tbs_ap
+PROGRAMS=test_tbs_ap test_one test_two test_three test_zero test_four test_five test_six test_tbs test_bgs test_bgs_ap
 SOURCES=\
 aperiodic_server_parameters.ads \
 aperiodic_workloads.adb \
