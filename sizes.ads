@@ -125,24 +125,18 @@ package Sizes is
   --  analyses for these are different.
 
   RM_Size: constant Server_Size_Table:=
-  ((BGS | PLS | TBS | CUS | BIS | DSS => 3160, DDS => 3181, DXS => 3093),
-   (BGS | PLS | TBS | CUS | BIS | DSS => 1109, DDS => 1081, DXS => 1085),
-   (BGS | PLS | TBS | CUS | BIS | DSS =>  125, DDS =>  117, DXS =>  117));
---   ((BGS => 3160),
---    (BGS => 1109),
---    (BGS => 125));
+  ((DDS => 3181, DXS => 3093, others => 3160),
+   (DDS => 1081, DXS => 1085, others => 1109),
+   (DDS =>  117, DXS =>  117, others => 125));
 
 
   --  Maximum server budget for deadline-bases versions
   --  of servers.
 
   EDF_Size: constant Server_Size_Table:=
-  ((BGS | PLS | DSS | TBS | CUS | BIS | DXS => 3240, DDS => 3181),
-   (BGS | PLS | DSS | TBS | CUS | BIS | DXS => 1674, DDS => 1622),
-   (BGS | PLS | DSS | TBS | CUS | BIS |DXS =>  648, DDS => 623));
---   ((BGS => 3240),
---    (BGS => 1674),
---    (BGS => 648));
+  ((DDS => 3181, others => 3240),
+   (DDS => 1622, others => 1674),
+   (DDS => 623, others => 648));
 
   --  Default number of times to repeat the experiments.
 
